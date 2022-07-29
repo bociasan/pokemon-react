@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {pokemons} from './data/pokemons.js'
+import {Card} from './components/Card'
+import './styles/card.css'
+import './styles/fonts.css'
+import {pokemonsFirst20} from "./data/pokemons-first20";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    pokemonsFirst20.forEach((pokemon) => pokemon.id = pokemon.url.slice(0, -1).split("/").pop()  )
+    return <div className="cards-container">
+            {
+                pokemonsFirst20.map((pokemon, index) =>
+                    (<Card pokemon={pokemon} index={index+1}/>))
+            }
+        </div>
+
+
 }
 
 export default App;
