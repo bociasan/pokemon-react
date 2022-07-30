@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {typeColor} from "../data/typeColor";
+import '../styles/card.css'
 
 export const Card = (props) => {
     const {pokemon} = props
@@ -35,7 +36,7 @@ export const Card = (props) => {
                 </div>
                 <div className="id-div">{pokemon.id}</div>
                 <div className="details-container">
-                    <div className="pokemon-name">{pokemon.name}</div>
+                    <div className="name">{pokemon.name}</div>
                     <div className="types-container">
                         {
                             types && types.map((type) => (

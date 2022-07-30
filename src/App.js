@@ -4,9 +4,9 @@ import './App.css';
 // import {pokemonsFirst20} from "./data/pokemons-first20";
 
 import {Card} from './components/Card'
-import './styles/card.css'
 import './styles/fonts.css'
 import {useEffect, useState} from "react";
+import {AnotherCard} from "./components/AnotherCard";
 
 function App() {
     // pokemonsFirst20.forEach((pokemon) => pokemon.id = pokemon.url.slice(0, -1).split("/").pop())
@@ -14,7 +14,7 @@ function App() {
     const [pokemons, setPokemons] = useState('')
 
     useEffect(()=> {
-        (async (limit = 5) => {
+        (async (limit = 4) => {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`);
             const json = await res.json();
             json.results.forEach((pokemon) => pokemon.id = pokemon.url.slice(0, -1).split("/").pop())
@@ -27,7 +27,14 @@ function App() {
             {
                 pokemons && pokemons.map((pokemon) =>
                     (<Card key={pokemon.id} pokemon={pokemon}/>))
+                    // (<AnotherCard key={pokemon.id} pokemon={pokemon}/>))
             }
+            <div className="cards-container">
+                {
+                    pokemons && pokemons.map((pokemon) =>
+                        (<AnotherCard key={pokemon.id} pokemon={pokemon}/>))
+                }
+            </div>
         </div>
 
 
