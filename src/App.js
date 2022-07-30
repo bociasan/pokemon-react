@@ -23,7 +23,19 @@ function App() {
         })();
     }, [])
 
-    return <div className="cards-container">
+    const [x, setX] = useState('0')
+    const [y, setY] = useState('0')
+    // let x,y;
+    const pokeballMove = (e) => {
+        setX(`${e.clientX+30}px`)
+        setY(`${e.clientY+35}px`)
+        // console.log(x)
+        // x = `${e.clientX}px`
+        // y = `${e.clientY}px`
+    }
+
+
+    return <div onContextMenu={(e)=> e.preventDefault()} className="cards-container" onMouseMove={(e)=>pokeballMove(e)}>
             {
                 pokemons && pokemons.map((pokemon) =>
                     (<Card key={pokemon.id} pokemon={pokemon}/>))
@@ -34,6 +46,10 @@ function App() {
                     pokemons && pokemons.map((pokemon) =>
                         (<AnotherCard key={pokemon.id} pokemon={pokemon}/>))
                 }
+            </div>
+
+            <div className="pokeball" style={{left:x, top:y}} >
+                <img  style={{width: 40, height:40}} src={require("./img/pokeball.png")}/>
             </div>
         </div>
 
