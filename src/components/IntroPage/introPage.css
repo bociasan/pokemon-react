@@ -1,5 +1,4 @@
 .introPage {
-  /* position: relative; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -10,15 +9,14 @@
 }
 
 .logo {
-  /* size: 250px; */
   width: 60vw;
   z-index: 1;
 }
 .background {
   z-index: -1;
   position: absolute;
-  background-image: url("./background.jpg");
-  filter: blur(2px);
+  background-image: url("../../img/background.webp");
+  filter: blur(4px);
   background-size: 100% 100%;
 }
 .button {
@@ -47,18 +45,18 @@
   top: 15px;
   left: 0;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1000px) {
   .logo {
     width: 80vw;
   }
   .introPage {
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .button {
-    bottom: 0px;
+    bottom: -20px;
   }
 }
-@media only screen and (max-width: 1400px) and (min-width: 750px) {
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
   .logo {
     width: 70vw;
   }

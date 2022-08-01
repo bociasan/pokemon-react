@@ -1,11 +1,9 @@
 .App {
   text-align: center;
-
-
+  height: 100vh;
 }
 
-.cards-container{
-  margin: 100px;
+.cards-container {
   align-items: center;
   width: 90%;
   height: 100%;
@@ -14,10 +12,9 @@
   flex-wrap: wrap;
   justify-content: center;
   cursor: url("./img/cursor.png"), auto;
-
 }
 
-.pokeball{
+.pokeball {
   position: fixed;
   transform: translate(-50%, -50%);
   /*width: 40px;*/
