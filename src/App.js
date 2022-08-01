@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import "./App.css";
 import IntroPage from "./components/IntroPage/introPage";
+import PokemonCards from "./components/PokemonCards/PokemonCards";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<IntroPage />} />
-          <Route path="/battleground" />
+          <Route path="/battleground" element={<PokemonCards />} />
         </Routes>
       </Router>
     </div>
