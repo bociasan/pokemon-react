@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { typeColor } from "../data/typeColor";
-import "../styles/card.css";
+import { typeColor } from "../../data/typeColor";
+import "../../styles/fonts.css";
 
 export const Card = (props) => {
   const { pokemon } = props;

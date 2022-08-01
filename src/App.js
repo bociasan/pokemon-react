@@ -3,6 +3,7 @@ import { Routes } from "react-router-dom";
 import "./App.css";
 import IntroPage from "./components/IntroPage/introPage";
 import PokemonCards from "./components/PokemonCards/PokemonCards";
+import BattleStatisticsComponent from "./components/BattleStatistics/BattleStatisticsPage";
 import { useState } from "react";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IntroPage />} />
           <Route path="/battleground" element={<PokemonCards />} />
+          <Route path="/statistics" element={<BattleStatisticsComponent />} />
         </Routes>
       </Router>
       <div className="pokeball" style={{ left: x, top: y }}>
