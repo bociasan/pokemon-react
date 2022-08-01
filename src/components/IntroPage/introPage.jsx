@@ -2,6 +2,7 @@ import React from "react";
 import "./introPage.css";
 import pokemonLogo from "./background-logo.png";
 import fightLogo from "./fight_logo.png";
+import { Link } from "react-router-dom";
 
 const IntroPage = () => {
   return (
@@ -9,9 +10,9 @@ const IntroPage = () => {
       <div className="introPage background"></div>
       <div className="introPage container">
         <img className="logo" src={pokemonLogo} />
-        <div className="button">
+        <Link to="/battleground" className="button">
           <img className="buttonLogo" src={fightLogo} />
-        </div>
+        </Link>
       </div>
     </div>
   );
