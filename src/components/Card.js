@@ -46,6 +46,7 @@ export const Card = (props) => {
             {types &&
               types.map((type) => (
                 <div
+                  key={type.type.name + pokemon.id}
                   className="type"
                   // style={{"--custom-type-color": typeColor.find((findType)=> findType.type === type.type.name).color}}
                 >
