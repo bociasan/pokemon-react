@@ -35,9 +35,9 @@ function App() {
         }
 
 
-        const t0 = performance.now();
+        // const t0 = performance.now();
         getTypes().then(pokemonRelations =>   setTypes(pokemonRelations))
-        const t1 = performance.now();
+        // const t1 = performance.now();
 
         const getTypes2 = async () => {
             let types = {}
@@ -46,12 +46,12 @@ function App() {
             return types
         }
 
-        const t3 = performance.now();
-        getTypes2().then(pokemonRelations =>   console.log(pokemonRelations))
-        const t4 = performance.now();
-
-        console.log(`Call Zsolt took ${t1 - t0} milliseconds.`);
-        console.log(`Call Sandu took ${t4 - t3} milliseconds.`);
+        // const t3 = performance.now();
+        // getTypes2().then(pokemonRelations =>   console.log(pokemonRelations))
+        // const t4 = performance.now();
+        //
+        // console.log(`Call Zsolt took ${t1 - t0} milliseconds.`);
+        // console.log(`Call Sandu took ${t4 - t3} milliseconds.`);
     }, [])
 
 
@@ -68,8 +68,8 @@ function App() {
 
     return <div onContextMenu={(e)=> e.preventDefault()} className="cards-container" onMouseMove={(e)=>pokeballMove(e)}>
                     <Card key={1} id={1}/>
-                    <Card key={5} id={5}/>
-                    <Card key={7} id={7}/>
+                    <Card key={10} id={15}/>
+                    {/*<Card key={7} id={7}/>*/}
 
             {/*<div className="cards-container">*/}
             {/*    {*/}
