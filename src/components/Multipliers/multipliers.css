@@ -1,0 +1,18 @@
+.multipliers-table{
+    background-color: #ffcfcf;
+    padding: 15px;
+    border-radius: 20px;
+    /*border: 1px solid crimson;*/
+}
+
+.multipliers-table-row{
+    /*border: 1px solid crimson;*/
+}
+
+.multipliers-table-cell{
+    width: 20px;
+    height: 20px;
+    border: 1px solid crimson;
+    font-size: 13px;
+}
+
