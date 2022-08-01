@@ -29,11 +29,11 @@
   border-radius: 10px;
   box-shadow: 4px 4px 12px rgba(209, 200, 79, 0.733);
   transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
   outline: none;
   background-color: #2a2a72;
   background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
   bottom: 70px;
+  cursor: url("../../img/cursor.png"), auto;
 }
 .button:hover {
   transform: scale(1.2);
