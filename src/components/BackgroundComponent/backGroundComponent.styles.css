@@ -1,0 +1,11 @@
+.background {
+  z-index: -1;
+  position: absolute;
+  filter: blur(4px);
+  height: 100%;
+  width: 100%;
+}
+.backgroundImage {
+  height: 100%;
+  width: 100%;
+}

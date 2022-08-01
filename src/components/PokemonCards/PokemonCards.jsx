@@ -1,17 +1,20 @@
-// import {pokemons} from './data/pokemons.js'
-// import {typeColor} from "./data/typeColor";
-// import {pokemonsFirst20} from "./data/pokemons-first20";
-
-import { Card } from "../Card";
+import { Card } from "./Card";
+import "./card.css";
 import "../../styles/fonts.css";
 import { useEffect, useState } from "react";
-import { AnotherCard } from "../AnotherCard.js";
-
+import { Link } from "react-router-dom";
+import BackgroundImage from "../BackgroundComponent/backgroundComponent";
+import backGroundImage from "../../img/background.webp";
 function PokemonCards() {
-  // pokemonsFirst20.forEach((pokemon) => pokemon.id = pokemon.url.slice(0, -1).split("/").pop())
-
+  const [battleRound, setBattleRound] = useState(1);
   const [pokemons, setPokemons] = useState([]);
-
+  const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
+  const handleChangeRoundClick = () => {
+    setBattleGroundCardStatus(!battleGroundCardsStatus);
+    setBattleRound(battleRound + 1);
+  };
+  const handleStartRound = () =>
+    setBattleGroundCardStatus(!battleGroundCardsStatus);
   useEffect(() => {
     (async (limit = 4) => {
       const res = await fetch(
@@ -26,9 +29,38 @@ function PokemonCards() {
   }, []);
 
   return (
-    <div onContextMenu={(e) => e.preventDefault()} className="cards-container">
-      {pokemons.length > 0 &&
-        pokemons.map((pokemon) => <Card pokemon={pokemon} key={pokemon.id} />)}
+    <div className="battleGround page">
+      <BackgroundImage image={backGroundImage} />
+      {battleGroundCardsStatus === false ? (
+        <button
+          className="roundAnnouncer"
+          onClick={handleStartRound}
+        >{`Round ${battleRound}`}</button>
+      ) : (
+        <div className="battleGround container">
+          <div
+            onContextMenu={(e) => e.preventDefault()}
+            className="cards-container"
+          >
+            {pokemons.length > 0 &&
+              pokemons.map((pokemon) => (
+                <Card pokemon={pokemon} key={pokemon.id} />
+              ))}
+          </div>
+          {battleRound < 3 ? (
+            <button
+              className="roundAnnouncer next"
+              onClick={handleChangeRoundClick}
+            >
+              Next Round
+            </button>
+          ) : (
+            <Link to="/statistics" className="roundAnnouncer statistics">
+              End game
+            </Link>
+          )}
+        </div>
+      )}
     </div>
   );
 }
