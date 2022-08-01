@@ -7,26 +7,18 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backGroundImage from "../../img/background.webp";
 function PokemonCards() {
   const [battleRound, setBattleRound] = useState(1);
-  const [pokemons, setPokemons] = useState([]);
   const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
+  const [first, setFirst] = useState(Math.trunc(Math.random()*1000)+1)
+  const [second, setSecond] = useState(Math.trunc(Math.random()*1000)+2)
+
+
   const handleChangeRoundClick = () => {
     setBattleGroundCardStatus(!battleGroundCardsStatus);
     setBattleRound(battleRound + 1);
   };
   const handleStartRound = () =>
     setBattleGroundCardStatus(!battleGroundCardsStatus);
-  useEffect(() => {
-    (async (limit = 4) => {
-      const res = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`
-      );
-      const json = await res.json();
-      json.results.forEach(
-        (pokemon) => (pokemon.id = pokemon.url.slice(0, -1).split("/").pop())
-      );
-      setPokemons(json.results);
-    })();
-  }, []);
+
 
   return (
     <div className="battleGround page">
@@ -42,10 +34,10 @@ function PokemonCards() {
             onContextMenu={(e) => e.preventDefault()}
             className="cards-container"
           >
-            {pokemons.length > 0 &&
-              pokemons.map((pokemon) => (
-                <Card pokemon={pokemon} key={pokemon.id} />
-              ))}
+
+            <Card id={first} key={first} />
+            <Card id={second} key={second} />
+
           </div>
           {battleRound < 3 ? (
             <button
