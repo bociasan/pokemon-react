@@ -1,82 +1,102 @@
 export const typeColor = [
     {
         "type": "normal",
-        "color": "pink"
+        "color": "pink",
+        url: "https://projectpokemon.org/images/gen7-types/Normal.png"
     },
     {
         "type": "fighting",
-        "color": "red"
+        "color": "red",
+        url: "https://projectpokemon.org/images/gen7-types/Fighting.png"
     },
     {
         "type": "flying",
-        "color": "#4ededc"
+        "color": "#4ededc",
+        url: "https://projectpokemon.org/images/gen7-types/Flying.png"
     },
     {
         "type": "poison",
-        "color": "#cc71cf"
+        "color": "#cc71cf",
+        url: "https://projectpokemon.org/images/gen7-types/Poison.png"
     },
     {
         "type": "ground",
-        "color": "#9c9885"
+        "color": "#9c9885",
+        url: "https://projectpokemon.org/images/gen7-types/Ground.png"
     },
     {
         "type": "rock",
-        "color": "#908653"
+        "color": "#908653",
+        url: "https://projectpokemon.org/images/gen7-types/Rock.png"
     },
     {
         "type": "bug",
-        "color": "#ffd500"
+        "color": "#ffd500",
+        url: "https://projectpokemon.org/images/gen7-types/Bug.png"
     },
     {
         "type": "ghost",
-        "color": "#cdbdb6"
+        "color": "#cdbdb6",
+        url: "https://projectpokemon.org/images/gen7-types/Ghost.png"
     },
     {
         "type": "steel",
-        "color": "#786a64"
+        "color": "#786a64",
+        url: "https://projectpokemon.org/images/gen7-types/Steel.png"
     },
     {
         "type": "fire",
-        "color": "#ff4f00"
+        "color": "#ff4f00",
+        url: "https://projectpokemon.org/images/gen7-types/Fire.png"
     },
     {
         "type": "water",
-        "color": "#39f0f4"
+        "color": "#39f0f4",
+        url: "https://projectpokemon.org/images/gen7-types/Water.png"
     },
     {
         "type": "grass",
-        "color": "#39f478"
+        "color": "#39f478",
+        url: "https://projectpokemon.org/images/gen7-types/Grass.png"
     },
     {
         "type": "electric",
-        "color": "#39f0f4"
+        "color": "#39f0f4",
+        url: "https://projectpokemon.org/images/gen7-types/Electric.png"
     },
     {
         "type": "psychic",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Psychic.png"
     },
     {
         "type": "ice",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Ice.png"
     },
     {
         "type": "dragon",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Dragon.png"
     },
     {
         "type": "dark",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Dark.png"
     },
     {
         "type": "fairy",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Fairy.png"
     },
     {
         "type": "unknown",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Normal.png"
     },
     {
         "type": "shadow",
-        "color": ""
+        "color": "",
+        url: "https://projectpokemon.org/images/gen7-types/Normal.png"
     }
 ]

@@ -2,7 +2,7 @@
     background-color: #ffcfcf;
     padding: 15px;
     border-radius: 20px;
-    /*border: 1px solid crimson;*/
+    border: 1px solid black;
 }
 
 .multipliers-table-row{
@@ -15,4 +15,23 @@
     border: 1px solid crimson;
     font-size: 13px;
 }
+
+.vertical-text{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    height: 60px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.pokeball-img{
+    width: 40px;
+    height: 40px;
+}
+
+
+
 

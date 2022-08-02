@@ -11,7 +11,7 @@ export const fetchPokemonData = async (id) => {
 }
 
 export const fetchPokemonsData = async () =>{
-    const POKEMONS_URL =  `https://pokeapi.co/api/v2/pokemon?limit=1155&offset=0`
+    const POKEMONS_URL =  `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`
     return await fetchData(POKEMONS_URL)
 }
 
@@ -50,6 +50,7 @@ export const fetchTypesData = async () =>{
         relations[element.name] = getMultipliers(element.name, element, keys)
         // console.log(element.name)
     })
+    console.log(relations)
     return relations
 }
 

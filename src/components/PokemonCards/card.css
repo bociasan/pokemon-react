@@ -69,6 +69,7 @@
   /*border: 3px solid #faed27;*/
   border: 2px solid #ffcfcf;
   padding-bottom: 10px;
+  text-shadow: #474747 1px 2px 2px;
 }
 
 .name {
@@ -81,6 +82,7 @@
   font-size: 20px;
   height: 50px;
   width: 100%;
+
 }
 .details-container {
   width: 100%;
@@ -117,6 +119,7 @@
   gap: 2px;
   height: 98%; /* 50px */
   width: 100%;
+
 }
 
 .img-div:hover {
@@ -158,25 +161,40 @@
 }
 
 .type {
-  font-family: cursive;
+  font-weight: 1000;
+  font-family: Winner;
+  text-shadow: #474747 1px 2px 2px;
+  /*font-family: cursive;*/
+  /*font-family: 'Cartoon';*/
+  text-transform: uppercase;
   height: 30px;
   /*width: 80px;*/
   padding: 0 10px;
   margin: 0 10px;
   border: 1px solid gray;
-  /*border-radius: 15px;*/
-  border-radius: 13px 4px;
+  border-radius: 15px;
+  /*border-radius: 13px 4px;*/
+
   /*border: 1px solid red;*/
   font-size: 18px;
   background-color: var(--custom-type-color);
-  /*background-image: linear-gradient(circle, #ffffff, var(--custom-type-color));*/
-  /background-image: radial-gradient(circle, #ffffff, var(--custom-type-color));
+  /*background-image: radial-gradient(circle, #ffffff, var(--custom-type-color));*/
+  /*background-image: radial-gradient(circle, var(--custom-type-color) 44%, rgba(255,255,255,1) 96%);*/
+
+
+  -webkit-box-shadow: inset 1px 1px 10px 0 #FFFFFF;
+  -moz-box-shadow: inset 1px 1px 10px 0 #FFFFFF;
+  box-shadow: inset 1px 1px 10px 0 var(--custom-border-color);
+  /*box-shadow: inset 0px 1px 20px 0 #FFFFFF;*/
+
   /*background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(50, 50, 50, 0.2) 0%, rgba(80, 80, 80, 0.1) );*/
-  color: #505050;
+  color: white;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  box-shadow: 1px 1px var(--custom-border-color);
+  /*box-shadow: 1px 1px var(--custom-border-color);*/
 }
+
+
 
 .type:hover {
   border: 1px solid gray;
@@ -229,4 +247,13 @@
   text-decoration: none;
   color: black;
   opacity: 0.8;
+}
+
+.type-img{
+  height: 20px;
+  width: 50px;
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-image: url("https://projectpokemon.org/images/gen7-types/Normal.png");
+/*style={{backgroundImage: }}*/
 }
