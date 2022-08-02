@@ -86,9 +86,9 @@ const CardsContainer = ({
         />
       </div>
 
-      <div className="topscreen-message">
-        Choose prediction for the left card
-      </div>
+      {/*<div className="topscreen-message">*/}
+      {/*  Choose prediction for the left card*/}
+      {/*</div>*/}
 
       <div
         onContextMenu={(e) => e.preventDefault()}
