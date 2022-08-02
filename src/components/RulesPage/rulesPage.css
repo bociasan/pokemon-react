@@ -9,3 +9,9 @@
   transform: scale(1);
 }
 
+.rules-page-container{
+  background-color: #ffcfcf;
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid black;
+}

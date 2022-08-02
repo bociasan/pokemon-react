@@ -21,7 +21,7 @@ const RulesPage = () => {
 
       <div className="rules-page-container">
           {Object.keys(types).length>0 && <Multipliers types={types}/>}
-
+            <div>Points are calculated by ... </div>
       </div>
     </div>
   );
