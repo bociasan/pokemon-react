@@ -29,7 +29,13 @@ export const fetchTypesData = async () => {
         type.damage_relations.half_damage_to.find((el) => el.name === key)
       ) {
         multipliers[key] = 0.5;
-      } else {
+      } else if (
+          type.damage_relations.no_damage_to.find((el) => el.name === key)
+      ) {
+        multipliers[key] = 0;
+      }
+
+      else {
         multipliers[key] = 1;
       }
     });

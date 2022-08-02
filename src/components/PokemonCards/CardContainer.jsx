@@ -67,36 +67,49 @@ const CardsContainer = ({
 
   return (
     <div className="battleground container">
+
+
+      <div className="button-interaction" style={buttonsStyle}>
+        <ButtonComponent
+            text={"WIN"}
+            onClick={() => handleClickUserDecicision("leftWin")} style={{color:'#00ff03'}}
+        />
+
+        <ButtonComponent
+            text={"LOSE"}
+            onClick={() => handleClickUserDecicision("leftLoose")} style={{color:'red'}}
+        />
+
+        <ButtonComponent
+            text={"DRAW"}
+            onClick={() => handleClickUserDecicision("draw")} style={{color:'yellow'}}
+        />
+      </div>
+
+      {/*<div className="topscreen-message">*/}
+      {/*  Choose prediction for the left card*/}
+      {/*</div>*/}
+
       <div
         onContextMenu={(e) => e.preventDefault()}
         className="cards-container"
       >
+
+
+
         {Object.keys(pokemon1).length > 0 && (
           <Card pokemon={pokemon1} key={pokemon1.id} style={style} />
         )}
         {}
-        <div>
-          <img className="battleground versus" src={VSLogo} />
+        <div className="battleground versus" >
+          <img src={VSLogo} />
         </div>
         {Object.keys(pokemon2).length > 0 && (
           <Card pokemon={pokemon2} key={pokemon2.id} style={style} />
         )}
         {/* {Object.keys(allTypes).length > 0 && <Multipliers types={allTypes} />} */}
       </div>
-      <div className="button-interaction" style={buttonsStyle}>
-        <ButtonComponent
-          text={"Left wins"}
-          onClick={() => handleClickUserDecicision("leftWin")}
-        />
-        <ButtonComponent
-          text={"Draw"}
-          onClick={() => handleClickUserDecicision("draw")}
-        />
-        <ButtonComponent
-          text={"Left looses"}
-          onClick={() => handleClickUserDecicision("leftLoose")}
-        />
-      </div>
+
     </div>
   );
 };
