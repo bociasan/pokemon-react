@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { typeColor } from "../data/typeColor";
-import "../styles/card.css";
+// import "../styles/card.css";
 
 export const Card = (props) => {
   const { pokemon } = props;

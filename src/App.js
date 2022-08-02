@@ -27,6 +27,7 @@ function App() {
         <img
           style={{ width: 40, height: 40 }}
           src={require("./img/pokeball.png")}
+          alt="pokeball"
         />
       </div>
     </div>
