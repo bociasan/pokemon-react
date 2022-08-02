@@ -8,31 +8,30 @@
 .card {
   border-radius: 20px;
   border: 2px solid var(--custom-border-color);
-  width: 200px;
-  height: 260px;
+  width: 250px;
+  height: 400px;
   margin: 20px;
   padding: 8px;
-
-  /*background-color: #efefef;*/
-  background-image: linear-gradient(
-    to top,
-    #ffffff,
-    #ffe9ff,
-    #ffcfcf,
-    #ffd06f,
-    #d5eb12
-  );
+  background-color: #f6d327;
+  background-image: linear-gradient(315deg, #f6d327 0%, #de4daa 74%);
   /*box-shadow: 0px 2px 2px 0px var(--custom-border-color);*/
-  box-shadow: 2px 5px 10px 0px #2971b8aa;
+  box-shadow: 0px 5px 10px 10px #2971b8aa;
   text-align: -webkit-center;
-
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.card.winner {
+  background-color: green;
+}
+.card.looser {
+  background-color: red;
+}
 .card:hover {
-  /*transform: translateY(-5px);*/
-  /*box-shadow: 0px 10px 20px 2px var(--custom-border-color-hover);*/
+  /* transform: translateY(-5px);*/
+  /*box-shadow: 0px 10px 20px 2px var(--custom-border-color-hover); */
   box-shadow: 6px 15px 15px 2px var(--custom-border-color-hover);
   border: 2px solid var(--custom-border-color-hover);
   background-size: 107% 107%;
@@ -78,8 +77,8 @@
   justify-content: space-around;
   font-family: "Pokemon Solid";
   color: #372549;
-  font-size: 20px;
-  height: 50px;
+  font-size: 1.5em;
+  height: 60px;
   width: 100%;
 }
 .details-container {
@@ -235,4 +234,45 @@
 .example-appear.example-apper-done {
   transform: scale(1.5);
   opacity: 1;
+}
+.battleground.versus {
+  height: 200px;
+  background-color: inherit;
+}
+@media only screen and (max-width: 1000px) {
+  .battleground.versus {
+    height: 20vw;
+  }
+  .cards-container {
+    width: 100vw;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card {
+    /* width: 30vw; */
+    height: 250px;
+  }
+  .gameHeartRemaining {
+    font-size: 50px !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .battleground.versus {
+    height: 300px;
+  }
+  .cards-container {
+    width: 100vw;
+    top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .card {
+    /* width: 30vw; */
+    width: 300px;
+  }
 }

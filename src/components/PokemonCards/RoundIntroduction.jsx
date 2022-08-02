@@ -8,14 +8,20 @@ const RoundIntroduction = ({
   pokemons,
   battleGroundCardsStatus,
   setBattleGroundCardStatus,
+  gameHearts,
+  setGameHearts,
+  userPoints,
+  setUserPoints,
 }) => {
   const [battleRound, setBattleRound] = useState(1);
   const [visible, setVisible] = useState(true);
+  console.log(visible);
   const handleChangeRoundClick = () => {
     setBattleGroundCardStatus(!battleGroundCardsStatus);
     setBattleRound(battleRound + 1);
-    setVisible(!visible);
+    setVisible(true);
   };
+  console.log(battleRound);
   useEffect(() => {
     const timer = setTimeout(() => setVisible(false), delay);
     return () => clearTimeout(timer);
@@ -29,6 +35,11 @@ const RoundIntroduction = ({
       pokemons={pokemons}
       handleChangeRoundClick={handleChangeRoundClick}
       battleRound={battleRound}
+      setBattleRound={setBattleRound}
+      gameHearts={gameHearts}
+      setGameHearts={setGameHearts}
+      userPoints={userPoints}
+      setUserPoints={setUserPoints}
     />
   );
 };
