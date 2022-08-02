@@ -273,6 +273,13 @@
   }
   .card {
     /* width: 30vw; */
-    width: 300px;
+    width: 400px;
   }
+}
+.button-interaction {
+  position: absolute;
+  width: 70vw;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 50px;
 }

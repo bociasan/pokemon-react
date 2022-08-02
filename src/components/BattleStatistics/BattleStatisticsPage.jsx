@@ -1,8 +1,10 @@
 import "./battleStatistics.css";
-import pokemonEnd from "../../img/pokemon_end.jpeg";
+import pokemonEnd from "../../img/pokemon_end.png";
 import Popup from "./Popup.js";
 import { useState } from "react";
 import { Player } from "./Player.js";
+import { Link } from "react-router-dom";
+import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 
 const mockDataPlayers = [
   { name: "player1", score: 20 },
@@ -16,10 +18,11 @@ const sortedMockDataPlayers = [...mockDataPlayers].sort((a, b) =>
   a.score > b.score ? -1 : 1
 );
 
-export const BattleStatisticsComponent = ({userPoints}) => {
+export const BattleStatisticsComponent = ({ userPoints = 0 }) => {
   const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div className="battleStatistics">
+      <BackgroundImage />
       <div className="imageContainer">
         <img className="pokemonImg" src={pokemonEnd} alt="pokemon" />
       </div>
@@ -29,6 +32,9 @@ export const BattleStatisticsComponent = ({userPoints}) => {
         <button className="showResultsBtn" onClick={() => setButtonPopup(true)}>
           Display results
         </button>
+        <Link className="showResultsBtn" to="/">
+          New game
+        </Link>
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
           {sortedMockDataPlayers.map((player, index) => {
             return <Player key={index} player={player} index={index} />;
