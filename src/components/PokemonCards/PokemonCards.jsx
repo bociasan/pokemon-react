@@ -5,7 +5,7 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backgroundImage from "../../img/background.webp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
-import BattleStatisticsComponent from "../BattleStatistics/BattleStatisticsPage";
+import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
 function PokemonCards({ userPoints, setUserPoints }) {
   const [gameHearts, setGameHearts] = useState(new Array(3));
   const [pokemons, setPokemons] = useState([]);
@@ -35,6 +35,7 @@ function PokemonCards({ userPoints, setUserPoints }) {
         />
       </div>
     );
-  else if (gameHearts.length === 0) return <BattleStatisticsComponent />;
+  else if (gameHearts.length === 0)
+    return <BattleStatisticsComponent userPoints={userPoints} />;
 }
 export default PokemonCards;
