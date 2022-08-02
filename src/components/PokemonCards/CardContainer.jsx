@@ -59,12 +59,10 @@ const CardsContainer = ({
     setButtonsStyle({ visibility: "hidden" });
     if (prediction === false) {
       setGameHearts(new Array(gameHearts.length - 1));
-      setBattleRound(battleRound + 1);
     } else if (prediction === true) {
       setUserPoints(userPoints + 1);
-      setBattleRound(battleRound + 1);
     }
-    // setTimeout(() => handleChangeRoundClick(), 2000);
+    setTimeout(() => handleChangeRoundClick(), 1000);
     console.log(prediction);
   };
 
@@ -109,14 +107,6 @@ const CardsContainer = ({
           Left wins
         </button>
       </div>
-      <button
-        className="roundAnnouncer next"
-        onClick={handleChangeRoundClick}
-        style={style}
-      >
-        {" "}
-        Next round
-      </button>
     </div>
   );
 };
