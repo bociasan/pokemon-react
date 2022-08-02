@@ -23,3 +23,9 @@
   transform: scale(1.2);
   transition: ease-in 0.5s;
 }
+@media only screen and (max-width: 1200px) {
+  .buttonComponent {
+    width: 100px;
+    height: 200px;
+  }
+}

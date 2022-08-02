@@ -20,7 +20,11 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<IntroPage />} />
+          <Route
+            path="/"
+            element={<IntroPage />}
+            setUserPoints={setUserPoints}
+          />
           <Route
             path="/battleground"
             element={

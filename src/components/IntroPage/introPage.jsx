@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backGroundImage from "../../img/background.webp";
 
-const IntroPage = () => {
+const IntroPage = ({ setUserPoints }) => {
   return (
     <div className="introPage">
       <BackgroundImage image={backGroundImage} />
       <div className="introPage container">
         <img className="logo" src={pokemonLogo} />
-        <Link to="/battleground" className="button">
+        <Link
+          to="/battleground"
+          className="button"
+          onClick={() => setUserPoints(0)}
+        >
           <img className="buttonLogo" src={fightLogo} />
         </Link>
       </div>

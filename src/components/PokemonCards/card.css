@@ -239,9 +239,16 @@
   height: 200px;
   background-color: inherit;
 }
-@media only screen and (max-width: 1000px) {
+.button-interaction {
+  position: absolute;
+  width: 70vw;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 50px;
+}
+@media only screen and (max-width: 1200px) {
   .battleground.versus {
-    height: 20vw;
+    height: 15vw;
   }
   .cards-container {
     width: 100vw;
@@ -252,16 +259,26 @@
   }
   .card {
     /* width: 30vw; */
-    height: 250px;
+    height: 300px;
   }
   .gameHeartRemaining {
     font-size: 50px !important;
     display: flex;
     flex-direction: column;
   }
+  .button-interaction {
+    bottom: 10px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 20vw;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   .battleground.versus {
     height: 300px;
   }
@@ -275,11 +292,4 @@
     /* width: 30vw; */
     width: 400px;
   }
-}
-.button-interaction {
-  position: absolute;
-  width: 70vw;
-  display: flex;
-  justify-content: space-evenly;
-  bottom: 50px;
 }

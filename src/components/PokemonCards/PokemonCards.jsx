@@ -7,7 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
 import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
 function PokemonCards({ userPoints, setUserPoints }) {
-  const [gameHearts, setGameHearts] = useState(new Array(3));
+  const [gameHearts, setGameHearts] = useState(new Array(5));
   const [pokemons, setPokemons] = useState([]);
   const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
 
@@ -25,7 +25,7 @@ function PokemonCards({ userPoints, setUserPoints }) {
         </div>
 
         <RoundIntroduction
-          delay={2000}
+          delay={1000}
           setBattleGroundCardStatus={setBattleGroundCardStatus}
           battleGroundCardsStatus={battleGroundCardsStatus}
           gameHearts={gameHearts}
