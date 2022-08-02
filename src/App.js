@@ -7,18 +7,28 @@ import BattleStatisticsComponent from "./components/BattleStatistics/BattleStati
 import { useState } from "react";
 
 function App() {
+  const [userPoints, setUserPoints] = useState(0);
   // const [x, setX] = useState("0");
   // const [y, setY] = useState("0");
   // const pokeballMove = (e) => {
   //   setX(`${e.clientX + 25}px`);
   //   setY(`${e.clientY + 25}px`);
   // };
+  console.log(userPoints);
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<IntroPage />} />
-          <Route path="/battleground" element={<PokemonCards />} />
+          <Route
+            path="/battleground"
+            element={
+              <PokemonCards
+                userPoints={userPoints}
+                setUserPoints={setUserPoints}
+              />
+            }
+          />
           <Route path="/statistics" element={<BattleStatisticsComponent />} />
         </Routes>
       </Router>
