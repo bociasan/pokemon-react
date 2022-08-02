@@ -7,14 +7,14 @@ import BattleStatisticsComponent from "./components/BattleStatistics/BattleStati
 import { useState } from "react";
 
 function App() {
-  const [x, setX] = useState("0");
-  const [y, setY] = useState("0");
-  const pokeballMove = (e) => {
-    setX(`${e.clientX + 25}px`);
-    setY(`${e.clientY + 25}px`);
-  };
+  // const [x, setX] = useState("0");
+  // const [y, setY] = useState("0");
+  // const pokeballMove = (e) => {
+  //   setX(`${e.clientX + 25}px`);
+  //   setY(`${e.clientY + 25}px`);
+  // };
   return (
-    <div className="App" onMouseMove={(e) => pokeballMove(e)}>
+    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<IntroPage />} />
@@ -22,12 +22,12 @@ function App() {
           <Route path="/statistics" element={<BattleStatisticsComponent />} />
         </Routes>
       </Router>
-      <div className="pokeball" style={{ left: x, top: y }}>
+      {/* <div className="pokeball" style={{ left: x, top: y }}>
         <img
           style={{ width: 40, height: 40 }}
           src={require("./img/pokeball.png")}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
