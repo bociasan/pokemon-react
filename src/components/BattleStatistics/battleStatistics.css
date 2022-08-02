@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+body {
+  font-family: "Roboto", sans-serif;
+}
 .battleStatistics {
   display: flex;
   flex-direction: column;
@@ -39,4 +42,61 @@
     width: 100vw;
     height: 70vh;
   }
+}
+
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  max-width: 640px;
+  background-color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: #eee;
+}
+
+.playerBtn {
+  width: 50px;
+  height: 50px;
+  background-color: #faea48;
+}
+
+.showResultsBtn {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.playerName,
+.playerScore {
+  font-size: 30px;
 }
