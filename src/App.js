@@ -1,9 +1,10 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import "./App.css";
 import IntroPage from "./components/IntroPage/introPage";
+import { BattleStatisticsComponent } from "./components/BattleStatistics/BattleStatisticsPage";
 import PokemonCards from "./components/PokemonCards/PokemonCards";
-import BattleStatisticsComponent from "./components/BattleStatistics/BattleStatisticsPage";
 import { useState } from "react";
 
 function App() {
