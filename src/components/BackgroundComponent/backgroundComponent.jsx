@@ -1,6 +1,7 @@
 import React from "react";
 import "./backGroundComponent.styles.css";
-const BackgroundImage = ({ image }) => (
+import backGroundImage from "../../img/background.webp";
+const BackgroundImage = ({ image = backGroundImage }) => (
   <div className="background">
     <img className="backgroundImage" src={image} />
   </div>

@@ -23,7 +23,7 @@ export const Card = (props) => {
             <div className="shadow"></div>
           </div>
         </div>
-        <div className="id-div">{pokemon.order}</div>
+        <div className="id-div">{id}</div>
         <div className="details-container">
           <div className="name">{pokemon.name}</div>
           <div className="types-container">

@@ -11,6 +11,7 @@ import {
 } from "../../functions/utils";
 import VSLogo from "../../img/vs.png";
 import { Multipliers } from "../Multipliers/Multipliers";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 const CardsContainer = ({
   handleChangeRoundClick,
   battleRound,
@@ -26,7 +27,6 @@ const CardsContainer = ({
   const [pokemon2, setPokemon2] = useState({});
   const [style, setStyle] = useState({ visibility: "hidden" });
   const [buttonsStyle, setButtonsStyle] = useState({ visibility: "visible" });
-  const [flag, setFlag] = useState(false);
   useEffect(() => {
     fetchTypesData().then((types) => setAllTypes(types));
     fetchPokemonsData().then((res) => {
@@ -63,7 +63,6 @@ const CardsContainer = ({
       setUserPoints(userPoints + 1);
     }
     setTimeout(() => handleChangeRoundClick(), 1000);
-    console.log(prediction);
   };
 
   return (
@@ -85,27 +84,18 @@ const CardsContainer = ({
         {/* {Object.keys(allTypes).length > 0 && <Multipliers types={allTypes} />} */}
       </div>
       <div className="button-interaction" style={buttonsStyle}>
-        <button
-          className="compare-button"
-          onClick={() => handleClickUserDecicision("leftLoose")}
-        >
-          {" "}
-          Left loose
-        </button>
-        <button
-          className="compare-button"
-          onClick={() => handleClickUserDecicision("draw")}
-        >
-          {" "}
-          Draw
-        </button>
-        <button
-          className="compare-button"
+        <ButtonComponent
+          text={"Left wins"}
           onClick={() => handleClickUserDecicision("leftWin")}
-        >
-          {" "}
-          Left wins
-        </button>
+        />
+        <ButtonComponent
+          text={"Draw"}
+          onClick={() => handleClickUserDecicision("draw")}
+        />
+        <ButtonComponent
+          text={"Left looses"}
+          onClick={() => handleClickUserDecicision("leftLoose")}
+        />
       </div>
     </div>
   );
