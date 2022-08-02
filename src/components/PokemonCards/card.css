@@ -120,16 +120,11 @@
 }
 
 .img-div:hover {
-  /*padding: 1%;*/
   height: 100%;
   width: 100%;
 }
 
 .pokemon-image {
-  /*transition-duration: 0.05s;*/
-  /*transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);*/
-  /*width: 99%;*/
-  /*height: 99%;*/
   width: 100%;
   height: 90%;
 }
@@ -142,7 +137,6 @@
 .shadow {
   position: relative;
 
-  /*bottom: 8px;*/
   width: 70%;
   height: 3%;
   border-radius: 80%;
@@ -160,18 +154,12 @@
 .type {
   font-family: cursive;
   height: 30px;
-  /*width: 80px;*/
   padding: 0 10px;
   margin: 0 10px;
   border: 1px solid gray;
-  /*border-radius: 15px;*/
   border-radius: 13px 4px;
-  /*border: 1px solid red;*/
   font-size: 18px;
   background-color: var(--custom-type-color);
-  /*background-image: linear-gradient(circle, #ffffff, var(--custom-type-color));*/
-  /background-image: radial-gradient(circle, #ffffff, var(--custom-type-color));
-  /*background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(50, 50, 50, 0.2) 0%, rgba(80, 80, 80, 0.1) );*/
   color: #505050;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -187,7 +175,7 @@
   margin: 0 5px;
   color: #000000;
 }
-.battleGround.page {
+.battleground.page {
   max-height: 100vh;
   height: 100%;
   max-width: 100vw;
@@ -197,7 +185,7 @@
   align-items: center;
   justify-content: center;
 }
-.battleGround.container {
+.battleground.container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -212,14 +200,14 @@
   border: none;
   font-size: 10em;
   font-family: "Cartoon";
-  opacity: 0.8;
-  transition: ease-in 0.5s;
-}
-.roundAnnouncer:hover {
   transform: scale(1.2);
-  opacity: 0.9;
+  color: #ff0000;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+}
+.roundAnnouncer {
+  -webkit-animation: ease-in-out 2s linear forwards;
+  animation: ease-in-out 2s linear forwards;
 }
 .roundAnnouncer.next {
   font-size: 3em;
@@ -229,4 +217,22 @@
   text-decoration: none;
   color: black;
   opacity: 0.8;
+}
+.gameHeartRemaining {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.example-appear {
+  opacity: 0.01;
+  z-index: 1;
+}
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.example-appear.example-apper-done {
+  transform: scale(1.5);
+  opacity: 1;
 }
