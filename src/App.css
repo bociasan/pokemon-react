@@ -4,6 +4,19 @@
   cursor: url("./img/cursor.png"), auto;
 }
 
+.topscreen-message{
+  width: 80%;
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  font-family: "Pokemon Solid";
+  letter-spacing: 3px;
+  font-size: 3em;
+  color: #f3c434;
+  text-shadow: 1px 1px 2px  black;
+  line-height: 50px;
+}
+
 .cards-container {
   align-items: center;
   width: 90%;
@@ -11,7 +24,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 
   z-index: -1;
 }
