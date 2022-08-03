@@ -100,3 +100,44 @@
     width: 70vw;
   }
 }
+.button:first-of-type {
+  position: relative;
+  animation: zoom-in-zoom-out 1.5s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.1) translateZ(0);
+  filter: blur(10px);
+  background: #1488cc;
+
+  background: linear-gradient(to right, #2b32b2, #1488cc);
+
+  background-size: 200% 200%;
+  animation: animateGlow 2s linear infinite;
+}
