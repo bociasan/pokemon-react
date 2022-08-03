@@ -1,21 +1,14 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
 .battleStatistics {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: inherit;
+  height: inherit;
 }
 
 .imageContainer {
-  width: 50vw;
-  height: 70vh;
+  width: 25vw;
 }
 
 .pokemonImg {
@@ -25,22 +18,25 @@ body {
 }
 
 .textContainer > h3 {
-  font-size: 30px;
-  padding: 10px;
+  font-size: 1.5em;
+  font-family: "Pokemon Solid";
+  letter-spacing: 2px;
+  color: blue;
+  text-shadow: 3px 3px 3px white;
 }
 
 .title {
-  background-color: black;
-  width: 100vw;
+  font-family: "Pokemon Solid";
+  background-color: rgba(0, 0, 0, 0.575);
   color: white;
-  font-size: 50px;
-  padding: 10px;
+  font-size: 1.5em;
+  letter-spacing: 5px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
   .imageContainer {
     width: 100vw;
-    height: 70vh;
+    height: 50vh;
   }
 }
 
@@ -49,7 +45,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  max-height: 99vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
@@ -62,6 +59,34 @@ body {
   width: 100%;
   max-width: 640px;
   background-color: white;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.saveBtn {
+  padding: 10px;
+  border: none;
+  background-color: #3f51b5;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .close-btn {
@@ -79,7 +104,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   background-color: #eee;
 }
 
@@ -92,11 +117,24 @@ body {
 .showResultsBtn {
   background-color: black;
   color: white;
-  padding: 5px;
-  font-size: 15px;
+  padding: 4px;
+  margin: 5px;
+  font-size: 1.1em;
+  font-family: "Pokemon Solid";
+  text-decoration: none;
+  width: 200px;
+  align-self: center;
+  letter-spacing: 2px;
 }
 
 .playerName,
 .playerScore {
   font-size: 30px;
+}
+.textContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

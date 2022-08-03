@@ -6,33 +6,33 @@
 }
 
 .card {
+  position: relative;
   border-radius: 20px;
   border: 2px solid var(--custom-border-color);
-  width: 200px;
-  height: 260px;
+  width: 345px;
+  height: 400px;
   margin: 20px;
   padding: 8px;
-
-  /*background-color: #efefef;*/
-  background-image: linear-gradient(
-    to top,
-    #ffffff,
-    #ffe9ff,
-    #ffcfcf,
-    #ffd06f,
-    #d5eb12
-  );
+  background-color: #f6d327;
+  background-image: linear-gradient(315deg, #f6d327 0%, #de4daa 74%);
   /*box-shadow: 0px 2px 2px 0px var(--custom-border-color);*/
-  box-shadow: 2px 5px 10px 0px #2971b8aa;
+  box-shadow: 0px 5px 10px 10px #2971b8aa;
   text-align: -webkit-center;
-
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.card.winner {
+  background-color: green;
+}
+.card.looser {
+  background-color: red;
+}
 .card:hover {
-  /*transform: translateY(-5px);*/
-  /*box-shadow: 0px 10px 20px 2px var(--custom-border-color-hover);*/
+  /* transform: translateY(-5px);*/
+  /*box-shadow: 0px 10px 20px 2px var(--custom-border-color-hover); */
   box-shadow: 6px 15px 15px 2px var(--custom-border-color-hover);
   border: 2px solid var(--custom-border-color-hover);
   background-size: 107% 107%;
@@ -57,6 +57,7 @@
   bottom: 83px;
   width: 43px;
   height: 22px;
+
   color: #faed27;
   font-family: "Pokemon Solid";
   font-weight: inherit;
@@ -78,8 +79,8 @@
   justify-content: space-around;
   font-family: "Pokemon Solid";
   color: #372549;
-  font-size: 20px;
-  height: 50px;
+  font-size: 1.5em;
+  height: 60px;
   width: 100%;
 }
 .details-container {
@@ -120,16 +121,11 @@
 }
 
 .img-div:hover {
-  /*padding: 1%;*/
   height: 100%;
   width: 100%;
 }
 
 .pokemon-image {
-  /*transition-duration: 0.05s;*/
-  /*transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);*/
-  /*width: 99%;*/
-  /*height: 99%;*/
   width: 100%;
   height: 90%;
 }
@@ -142,7 +138,6 @@
 .shadow {
   position: relative;
 
-  /*bottom: 8px;*/
   width: 70%;
   height: 3%;
   border-radius: 80%;
@@ -160,22 +155,26 @@
 .type {
   font-family: cursive;
   height: 30px;
-  /*width: 80px;*/
   padding: 0 10px;
   margin: 0 10px;
   border: 1px solid gray;
-  /*border-radius: 15px;*/
-  border-radius: 13px 4px;
-  /*border: 1px solid red;*/
+  border-radius: 13px;
   font-size: 18px;
   background-color: var(--custom-type-color);
-  /*background-image: linear-gradient(circle, #ffffff, var(--custom-type-color));*/
-  /background-image: radial-gradient(circle, #ffffff, var(--custom-type-color));
-  /*background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(50, 50, 50, 0.2) 0%, rgba(80, 80, 80, 0.1) );*/
   color: #505050;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   box-shadow: 1px 1px var(--custom-border-color);
+
+  -webkit-box-shadow: inset 1px 1px 10px 0 #ffffff;
+  -moz-box-shadow: inset 1px 1px 10px 0 #ffffff;
+  box-shadow: inset 1px 1px 10px 0 var(--custom-border-color);
+  /*color: white;*/
+
+  /*font-weight: 1000;*/
+  font-family: Winner;
+  text-shadow: #ffffff88 1px 1px 1px;
+  /*text-transform: uppercase;*/
 }
 
 .type:hover {
@@ -187,24 +186,24 @@
   margin: 0 5px;
   color: #000000;
 }
-.battleGround.page {
-  max-height: 100vh;
+.battleground.page {
   height: 100%;
-  max-width: 100vw;
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.battleGround.container {
-  height: 100%;
-  width: 100%;
+.battleground.container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
+  position: relative;
 }
+
 .roundAnnouncer {
   width: 700px;
   height: 100px;
@@ -212,14 +211,15 @@
   border: none;
   font-size: 10em;
   font-family: "Cartoon";
-  opacity: 0.8;
-  transition: ease-in 0.5s;
-}
-.roundAnnouncer:hover {
   transform: scale(1.2);
-  opacity: 0.9;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
-    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  /*color: #ff0000;*/
+  color: red;
+  /*text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;*/
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+}
+.roundAnnouncer {
+  -webkit-animation: ease-in-out 2s linear forwards;
+  animation: ease-in-out 2s linear forwards;
 }
 .roundAnnouncer.next {
   font-size: 3em;
@@ -229,4 +229,169 @@
   text-decoration: none;
   color: black;
   opacity: 0.8;
+}
+.gameHeartRemaining {
+  position: absolute;
+  display: flex;
+  /*width: 50px;*/
+  align-self: flex-start;
+  flex-direction: column;
+
+  /*top: 10px;*/
+  right: 2vw;
+}
+
+.heart-img {
+  color: red;
+}
+
+.example-appear {
+  opacity: 0.01;
+  z-index: 1;
+}
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.example-appear.example-apper-done {
+  transform: scale(1.5);
+  opacity: 1;
+}
+.battleground .versus {
+  position: absolute;
+  display: flex;
+  align-self: center;
+  z-index: 2;
+  height: 200px;
+  background-color: inherit !important;
+}
+.battleground.versus::after {
+  background-image: none;
+}
+.button-interaction {
+  position: absolute;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /*bottom: 50px;*/
+  left: 50px;
+}
+@media only screen and (max-width: 1200px) {
+  .battleground.versus {
+    height: 15vw;
+  }
+  .cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+  .card-container {
+    width: 100vw;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .card {
+    width: 70vw;
+    height: 20vh;
+    flex-direction: row;
+  }
+  .gameHeartRemaining {
+    font-size: 50px !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .button-interaction {
+    position: absolute;
+    top: 80%;
+    left: 0px;
+    flex-direction: row;
+    width: 100vw;
+    height: 10vh;
+  }
+  .battleground.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .id-div {
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .battleground.versus {
+    height: 300px;
+  }
+  .cards-container {
+    margin: 20px;
+    width: 70%;
+    top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+  }
+
+  /*.card {*/
+  /*  !* width: 30vw; *!*/
+  /*  width: 400px;*/
+  /*}*/
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.cards-container ::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  /* transform: scale(1) translateZ(0); */
+  filter: blur(10px);
+  background: linear-gradient(
+    to left,
+    #ff5770,
+    #e4428d,
+    #c42da8,
+    #9e16c3,
+    #6501de,
+    #9e16c3,
+    #c42da8,
+    #e4428d,
+    #ff5770
+  );
+  background-size: 200% 200%;
+  animation: animateGlow 1.25s linear infinite;
+}
+
+.card:first-of-type {
+  position: relative;
+  animation: zoom-in-zoom-out 2s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.08, 1.08);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }

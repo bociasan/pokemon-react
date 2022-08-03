@@ -1,11 +1,12 @@
 .background {
   z-index: -1;
   position: absolute;
-  filter: blur(4px);
+  top: 0;
+  filter: blur(2px);
   height: 100%;
   width: 100%;
+  background-size: 100% 100%;
 }
 .backgroundImage {
-  height: 100%;
-  width: 100%;
+  background-size: 100% 100%;
 }

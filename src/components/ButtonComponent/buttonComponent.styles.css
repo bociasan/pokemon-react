@@ -1,0 +1,42 @@
+.buttonComponent {
+  background-color: #0096ff;
+  font-size: 1.3em;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  /*padding: 5px;*/
+
+  margin: 15px 0;
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 12px rgba(0, 160, 253, 0.801);
+  text-shadow: 1px 1px 2px var(--var-color);
+  transition: all 0.3s ease-in-out 0s;
+  outline: none;
+  /*background-color: #2a2a72 ;*/
+
+  background-image: linear-gradient(315deg, #2a2a7277 0%, #00a0fdc4 74%);
+  background-color: transparent;
+  font-family: "Pokemon Solid";
+  letter-spacing: 2px;
+
+  line-height: 0px; /* <- changed this */
+  box-sizing: border-box; /* <- added this */
+  padding-bottom: 7px;
+}
+
+.buttonComponent:hover {
+  color: white;
+  transform: scale(1.1);
+  transition: ease-in 0.5s;
+  background-color: #2a2a72;
+  background-image: linear-gradient(0deg, #2a2a72 0%, #00a0fd 100%);
+  border: 2px groove #f6d327;
+}
+@media only screen and (max-width: 1200px) {
+  .buttonComponent {
+    width: 90px;
+    height: 10vh;
+  }
+}

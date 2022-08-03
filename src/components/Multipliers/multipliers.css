@@ -1,8 +1,25 @@
+.root{
+    --default-size: 25px;
+}
+
+.multipliers-table-div{
+    font-family: Winner;
+    /*background-color: #ffcfcf;*/
+    /*padding: 15px;*/
+    /*border-radius: 20px;*/
+    /*border: 1px solid black;*/
+}
+
 .multipliers-table{
-    background-color: #ffcfcf;
-    padding: 15px;
-    border-radius: 20px;
-    /*border: 1px solid crimson;*/
+    /*background-color: #ffcfcf;*/
+    /*padding: 15px;*/
+    /*border-radius: 20px;*/
+    /*border: 1px solid black;*/
+}
+
+.table-title{
+
+    font-size: 2em;
 }
 
 .multipliers-table-row{
@@ -10,9 +27,32 @@
 }
 
 .multipliers-table-cell{
+
     width: 20px;
     height: 20px;
     border: 1px solid crimson;
     font-size: 13px;
 }
 
+.first-row{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    height: 70px;
+    width: 20px;
+}
+
+.first-column{
+    width: 70px;
+    height: var(--default-size);
+}
+
+.bold{
+    /*font-family: "Pokemon Solid";*/
+    font-weight: bold;
+}
+
+.pokeball-img{
+    width: 40px;
+    height: 40px;
+}

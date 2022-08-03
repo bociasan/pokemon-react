@@ -1,6 +1,6 @@
 import React from "react";
 import "./battleStatistics.css";
-import pokemonEnd from "../../img/pokemon_end.jpeg";
+import pokemonEnd from "../../img/pokemon_end.png";
 import Popup from "./Popup.js";
 import { Player } from "./Player.js";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const players = [
   // { name: "player5", score: 30 },
 ];
 
-export const BattleStatisticsPage = () => {
+export const BattleStatisticsPage = ({ userPoints = 0 }) => {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [username, setUsername] = useState("");
   const [playerHasNoUsername, setPlayerHasNoUsername] = useState(true);
@@ -53,7 +53,7 @@ export const BattleStatisticsPage = () => {
         ) : (
           <h3>{`Your name: ${username}`}</h3>
         )}
-        <h3>{` Your score: ${0}`}</h3>
+        <h3>{` Your score: ${userPoints}`}</h3>
         <button className="showResultsBtn" onClick={() => setButtonPopup(true)}>
           Display results
         </button>
@@ -64,19 +64,27 @@ export const BattleStatisticsPage = () => {
           trigger={buttonPopup}
           shouldClose={true}
           setTrigger={setButtonPopup}
+          className="box"
         >
           {savedPlayers.map((player, index) => {
             return <Player key={index} player={player} index={index} />;
           })}
         </Popup>
 
-        <Popup trigger={playerHasNoUsername} shouldClose={false}>
+        <Popup
+          trigger={playerHasNoUsername}
+          shouldClose={false}
+          className="inputBox"
+        >
           <input
-            placeholder="Enter name:"
+            type="text"
+            placeholder="Enter username:"
             value={username}
             onChange={handleUsername}
           ></input>
-          <button onClick={() => savePlayer()}>Save</button>
+          <button className="saveBtn" onClick={() => savePlayer()}>
+            Save
+          </button>
         </Popup>
       </div>
     </div>
