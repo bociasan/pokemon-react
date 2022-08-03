@@ -94,7 +94,7 @@ export const comparePokemons = (
   };
 };
 
-const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
+export const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
   let totalPoints = 0;
   // console.log(typesArray)
   firstPokemon.types.forEach((element1) => {
@@ -106,6 +106,21 @@ const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
     totalPoints += partialPoints;
   });
   return totalPoints / firstPokemon.types.length;
+};
+
+
+export const calcPoints2 = (array1, array2, typesArray) => {
+  let totalPoints = 0;
+  // console.log(typesArray)
+  array1.forEach((element1) => {
+    let partialPoints = 1;
+    array2.forEach((element2) => {
+      partialPoints *= typesArray[element1][element2];
+      // console.log(element1.type.name)
+    });
+    totalPoints += partialPoints;
+  });
+  return totalPoints / array1.length;
 };
 
 // const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
