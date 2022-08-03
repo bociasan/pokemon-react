@@ -16,7 +16,7 @@
   outline: none;
   /*background-color: #2a2a72 ;*/
 
-  background-image: linear-gradient(315deg, #2a2a7277 0%, #00a0fdc4 74%) ;
+  background-image: linear-gradient(315deg, #2a2a7277 0%, #00a0fdc4 74%);
   background-color: transparent;
   font-family: "Pokemon Solid";
   letter-spacing: 2px;
@@ -37,6 +37,6 @@
 @media only screen and (max-width: 1200px) {
   .buttonComponent {
     width: 90px;
-    height: 20vh;
+    height: 10vh;
   }
 }

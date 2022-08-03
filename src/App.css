@@ -1,23 +1,22 @@
 .App {
   text-align: center;
-  height: 100%;
+  height: 100vh;
   cursor: url("./img/cursor.png"), auto;
-  position: relative;
-  width: 100%;
-  padding: 0;
+  width: 100vw;
 }
 
 .topscreen-message {
   width: 80%;
   position: absolute;
   top: 50px;
-  left: 80px;
+  text-align: center;
   font-family: "Pokemon Solid";
   letter-spacing: 3px;
   font-size: 3em;
   color: #f3c434;
   text-shadow: 1px 1px 2px black;
   line-height: 50px;
+  text-align: end;
 }
 
 .cards-container {
