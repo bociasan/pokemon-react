@@ -7,7 +7,7 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backGroundImage from "../../img/background.webp";
 import {Multipliers} from "../Multipliers/Multipliers";
 import {fetchTypesData} from "../../functions/utils";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const RulesPage = () => {
     const [types, setTypes] = useState({})
@@ -23,6 +23,11 @@ const RulesPage = () => {
           {Object.keys(types).length>0 && <Multipliers types={types}/>}
             {/*<div>Points are calculated by ... </div>*/}
       </div>
+
+        <Link className="new-game-button" to="/">
+            New Game
+        </Link>
+
     </div>
   );
 };
