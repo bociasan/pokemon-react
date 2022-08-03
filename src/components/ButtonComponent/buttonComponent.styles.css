@@ -1,6 +1,6 @@
 .buttonComponent {
   background-color: #0096ff;
-  font-size: 1.5em;
+  font-size: 1.3em;
   border-color: #dbdbdb;
   border-width: 1px;
   color: #363636;
@@ -20,12 +20,15 @@
 
 .buttonComponent:hover {
   color: white;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: ease-in 0.5s;
+  background-color: #2a2a72;
+  background-image: linear-gradient(0deg, #2a2a72 0%, #00a0fd 100%);
+  border: 2px groove #f6d327;
 }
 @media only screen and (max-width: 1200px) {
   .buttonComponent {
-    width: 100px;
-    height: 200px;
+    width: 90px;
+    height: 20vh;
   }
 }
