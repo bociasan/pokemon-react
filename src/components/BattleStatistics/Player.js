@@ -1,3 +1,4 @@
+import React from "react";
 export const Player = ({ player, index }) => {
   return (
     <div className="player">

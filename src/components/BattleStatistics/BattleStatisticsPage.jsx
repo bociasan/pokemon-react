@@ -1,3 +1,4 @@
+import React from "react";
 import "./battleStatistics.css";
 import pokemonEnd from "../../img/pokemon_end.jpeg";
 import Popup from "./Popup.js";
@@ -14,33 +15,31 @@ const players = [
   // { name: "player5", score: 30 },
 ];
 
-
 export const BattleStatisticsPage = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [username,setUsername] = useState("")
-  const [playerHasNoUsername,setPlayerHasNoUsername] = useState(true)
+  const [username, setUsername] = useState("");
+  const [playerHasNoUsername, setPlayerHasNoUsername] = useState(true);
 
-  const [savedPlayers,setSavedPlayers] = useState(() => {
+  const [savedPlayers, setSavedPlayers] = useState(() => {
     // getting stored value
     const saved = localStorage.getItem("players");
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
 
-  const handleUsername = event => {
+  const handleUsername = (event) => {
     setUsername(event.target.value);
   };
 
-function savePlayer(){
-  setSavedPlayers([...savedPlayers, {name:username,score:userPoints}])
-  setPlayerHasNoUsername(false)
-}
+  function savePlayer() {
+    setSavedPlayers([...savedPlayers, { name: username, score: 0 }]);
+    setPlayerHasNoUsername(false);
+  }
 
-
-useEffect(() => {
-  // storing input name
-  localStorage.setItem("players", JSON.stringify(savedPlayers));
-}, [savedPlayers]);
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("players", JSON.stringify(savedPlayers));
+  }, [savedPlayers]);
 
   return (
     <div className="battleStatistics">
@@ -49,25 +48,36 @@ useEffect(() => {
       </div>
       <div className="textContainer">
         <h1 className="title">Battle Results</h1>
-        {playerHasNoUsername===true?"":<h3>{`Your name: ${username}`}</h3>}
-        <h3>{` Your score: ${userPoints}`}</h3>
+        {playerHasNoUsername === true ? (
+          ""
+        ) : (
+          <h3>{`Your name: ${username}`}</h3>
+        )}
+        <h3>{` Your score: ${0}`}</h3>
         <button className="showResultsBtn" onClick={() => setButtonPopup(true)}>
           Display results
         </button>
         <Link className="showResultsBtn" to="/">
           New game
         </Link>
-        <Popup trigger={buttonPopup} shouldClose={true} setTrigger={setButtonPopup}>
+        <Popup
+          trigger={buttonPopup}
+          shouldClose={true}
+          setTrigger={setButtonPopup}
+        >
           {savedPlayers.map((player, index) => {
             return <Player key={index} player={player} index={index} />;
           })}
         </Popup>
 
         <Popup trigger={playerHasNoUsername} shouldClose={false}>
-         <input placeholder="Enter name:" value={username} onChange={handleUsername}></input>
-         <button onClick={() => savePlayer()}>Save</button>
+          <input
+            placeholder="Enter name:"
+            value={username}
+            onChange={handleUsername}
+          ></input>
+          <button onClick={() => savePlayer()}>Save</button>
         </Popup>
-        
       </div>
     </div>
   );
