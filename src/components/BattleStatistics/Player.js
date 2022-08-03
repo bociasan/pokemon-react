@@ -1,7 +1,7 @@
 export const Player = ({ player, index }) => {
   return (
     <div className="player">
-      <button className="playerBtn">{index + 1}</button>
+      <span className="playerOverallRank">{index + 1}</span>
       <p className="playerName">
         <i class="fa-solid fa-scroll"></i>
         {player.name}

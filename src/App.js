@@ -26,10 +26,7 @@ function App() {
             element={<IntroPage />}
             setUserPoints={setUserPoints}
           />
-            <Route
-                path="/rules"
-                element={<RulesPage />}
-            />
+          <Route path="/rules" element={<RulesPage />} />
           <Route
             path="/battleground"
             element={
@@ -39,7 +36,10 @@ function App() {
               />
             }
           />
-          <Route path="/statistics" element={<BattleStatisticsComponent />} />
+          <Route
+            path="/statistics"
+            element={<BattleStatisticsComponent userPoints={userPoints} />}
+          />
         </Routes>
       </Router>
       {/* <div className="pokeball" style={{ left: x, top: y }}>
