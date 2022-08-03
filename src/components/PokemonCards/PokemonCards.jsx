@@ -16,7 +16,8 @@ function PokemonCards({ userPoints, setUserPoints }) {
         <BackgroundImage image={backgroundImage} />
         <div className="gameHeartRemaining">
           {[...gameHearts].map((value, index) => (
-            <FavoriteIcon className="heart-img"
+            <FavoriteIcon
+              className="heart-img"
               key={index}
               style={{ color: "red", fontSize: "50px" }}
             />

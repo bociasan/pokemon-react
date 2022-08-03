@@ -1,23 +1,14 @@
-* {
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
 .battleStatistics {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  font-family: "Pokemon Solid";
+  width: inherit;
+  height: inherit;
 }
 
 .imageContainer {
-  width: 28vw;
+  width: 25vw;
 }
 
 .pokemonImg {
@@ -31,13 +22,12 @@ body {
   font-family: "Pokemon Solid";
   letter-spacing: 2px;
   color: blue;
-
   text-shadow: 3px 3px 3px white;
 }
 
 .title {
+  font-family: "Pokemon Solid";
   background-color: rgba(0, 0, 0, 0.575);
-  width: 100%;
   color: white;
   font-size: 1.5em;
   letter-spacing: 5px;
