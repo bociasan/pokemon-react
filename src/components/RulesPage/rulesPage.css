@@ -10,7 +10,9 @@
 }
 
 .rules-page-container{
-  background-color: #ffcfcf;
+  background-color: #ffcfcfee;
+  width: 80%;
+  /*height: 700px;*/
   padding: 15px;
   border-radius: 20px;
   border: 1px solid black;
