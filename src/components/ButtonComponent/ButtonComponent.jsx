@@ -7,8 +7,9 @@ const ButtonComponent = ({
   onClick,
   className = "buttonComponent",
 }) => {
+
   return (
-    <button onClick={onClick} className={className} style={{ ...style }}>
+    <button onClick={onClick} className={className} style={{ ...style, "--var-color": style.color }}>
       {text}
     </button>
   );
