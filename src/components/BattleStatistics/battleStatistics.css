@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding: 0px;
   margin: 0;
 }
 body {
@@ -11,13 +11,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 100vh;
   height: 100%;
+  width: 100%;
+  font-family: "Pokemon Solid";
 }
 
 .imageContainer {
-  width: 50vw;
-  height: 64vh;
+  width: 28vw;
 }
 
 .pokemonImg {
@@ -27,22 +27,26 @@ body {
 }
 
 .textContainer > h3 {
-  font-size: 30px;
-  padding: 10px;
+  font-size: 1.5em;
+  font-family: "Pokemon Solid";
+  letter-spacing: 2px;
+  color: blue;
+
+  text-shadow: 3px 3px 3px white;
 }
 
 .title {
-  background-color: black;
-  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.575);
+  width: 100%;
   color: white;
-  font-size: 50px;
-  padding: 10px;
+  font-size: 1.5em;
+  letter-spacing: 5px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
   .imageContainer {
     width: 100vw;
-    height: 70vh;
+    height: 50vh;
   }
 }
 
@@ -51,7 +55,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  max-height: 99vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
@@ -81,7 +86,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   background-color: #eee;
 }
 
@@ -94,11 +99,14 @@ body {
 .showResultsBtn {
   background-color: black;
   color: white;
-  padding: 10px;
-  font-size: 1.5em;
+  padding: 4px;
+  margin: 5px;
+  font-size: 1.1em;
+  font-family: "Pokemon Solid";
   text-decoration: none;
   width: 200px;
   align-self: center;
+  letter-spacing: 2px;
 }
 
 .playerName,
@@ -106,8 +114,9 @@ body {
   font-size: 30px;
 }
 .textContainer {
-  height: 30vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }

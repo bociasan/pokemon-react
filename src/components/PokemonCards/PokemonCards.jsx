@@ -7,8 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
 import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
 function PokemonCards({ userPoints, setUserPoints }) {
-  const [gameHearts, setGameHearts] = useState(new Array(5));
-  const [pokemons, setPokemons] = useState([]);
+  const [gameHearts, setGameHearts] = useState(new Array(3));
   const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
 
   if (gameHearts.length > 0)
@@ -19,7 +18,7 @@ function PokemonCards({ userPoints, setUserPoints }) {
           {[...gameHearts].map((value, index) => (
             <FavoriteIcon className="heart-img"
               key={index}
-              style={{ color: "red", fontSize: "100px" }}
+              style={{ color: "red", fontSize: "50px" }}
             />
           ))}
         </div>
