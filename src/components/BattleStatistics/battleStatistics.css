@@ -17,20 +17,13 @@
   object-fit: contain;
 }
 
-.textContainer > h3 {
-  font-size: 1.5em;
-  font-family: "Pokemon Solid";
-  letter-spacing: 2px;
-  color: blue;
-  text-shadow: 3px 3px 3px white;
-}
-
 .title {
   font-family: "Pokemon Solid";
   background-color: rgba(0, 0, 0, 0.575);
   color: white;
   font-size: 1.5em;
   letter-spacing: 5px;
+  height: 70px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
@@ -41,49 +34,58 @@
 }
 
 .popup-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 99vh;
+  position: absolute;
+  top: 0px;
+  min-height: 80vh;
+  max-height: 100vh;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background-color: inherit;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .box {
   position: relative;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
-  max-width: 640px;
+  max-width: 50vw;
   background-color: white;
+  background-color: rgba(0, 0, 0, 0.575);
 }
 
 .close-btn {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: red;
-  color: white;
-  padding: 5px;
+  color: red;
+  font-weight: 800;
+  padding: 3px;
 }
 
 .player {
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 5px;
   /* margin-bottom: 5px; */
   background-color: #eee;
 }
 
-.playerBtn {
+.playerOverallRank {
   width: 50px;
   height: 50px;
-  background-color: #faea48;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  color: white;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .showResultsBtn {
@@ -101,12 +103,59 @@
 
 .playerName,
 .playerScore {
-  font-size: 30px;
+  font-size: 1.1em;
 }
 .textContainer {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+.userInput {
+  width: 200px;
+  height: 5vh;
+  background-color: rgba(0, 0, 0, 0.705);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.userInput::placeholder {
+  color: white;
+  font-weight: 800;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+.userInputPopup {
+  background-color: inherit;
+  order: -1;
+}
+.userFinalInfo {
+  font-size: 1.5em;
+  font-family: "Pokemon Solid";
+  letter-spacing: 2px;
+  color: blue;
+  text-shadow: 3px 3px 3px white;
+  line-height: 1;
+}
+.buttonSavePlayer {
+  background-color: #0096ff;
+  font-size: 1.2em;
+  color: white;
+  border-color: #dbdbdb;
+  border-width: 2px;
+  width: 100px;
+  height: 5vh;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 12px rgba(0, 160, 253, 0.801);
+  text-shadow: 1px 1px 2px black;
+  transition: all 0.3s ease-in-out 0s;
+  outline: none;
+  background-image: linear-gradient(315deg, #2a2a72e1 0%, #00a0fdef 74%);
+  background-color: transparent;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1;
+  font-weight: 800;
 }

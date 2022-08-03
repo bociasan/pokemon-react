@@ -55,13 +55,13 @@
   outline: none;
   /*background-color: #2a2a72;*/
   /*background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);*/
-  bottom: 20px;
+  bottom: 80px;
   right: 30px;
   cursor: url("../../img/cursor.png"), auto;
 }
 
 .rules-button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: ease-in 0.5s;
 }
 

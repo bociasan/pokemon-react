@@ -1,25 +1,40 @@
 import "./battleStatistics.css";
 import pokemonEnd from "../../img/pokemon_end.png";
 import Popup from "./Popup.js";
-import { useState } from "react";
 import { Player } from "./Player.js";
 import { Link } from "react-router-dom";
 import BackgroundImage from "../BackgroundComponent/backgroundComponent";
+import { useState, useEffect } from "react";
 
-const mockDataPlayers = [
-  { name: "player1", score: 20 },
-  { name: "player2", score: 10 },
-  { name: "player3", score: 60 },
-  { name: "player4", score: 40 },
-  { name: "player5", score: 30 },
-];
-
-const sortedMockDataPlayers = [...mockDataPlayers].sort((a, b) =>
-  a.score > b.score ? -1 : 1
-);
-
-export const BattleStatisticsComponent = ({ userPoints = 0 }) => {
+export const BattleStatisticsComponent = ({ userPoints }) => {
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [username, setUsername] = useState("");
+  const [playerHasNoUsername, setPlayerHasNoUsername] = useState(true);
+  const [userNameInputStatus, setuserNameInputStatus] = useState(true);
+  console.log(userPoints);
+  const [savedPlayers, setSavedPlayers] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("players");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
+
+  const handleUsername = (event) => {
+    setUsername(event.target.value);
+  };
+
+  function savePlayer(e) {
+    e.preventDefault();
+    setSavedPlayers([...savedPlayers, { name: username, score: userPoints }]);
+    setPlayerHasNoUsername(false);
+    setuserNameInputStatus(false);
+  }
+
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("players", JSON.stringify(savedPlayers));
+  }, [savedPlayers]);
+
   return (
     <div className="battleStatistics">
       <BackgroundImage />
@@ -27,19 +42,50 @@ export const BattleStatisticsComponent = ({ userPoints = 0 }) => {
         <img className="pokemonImg" src={pokemonEnd} alt="pokemon" />
       </div>
       <div className="textContainer">
-        <h1 className="title">Battle Results</h1>
-        <h3>{`Your score: ${userPoints}`}</h3>
+        <span className="title">Battle Results</span>
+        {playerHasNoUsername === true ? (
+          ""
+        ) : (
+          <div className="userFinalInfo">{`Player: ${username}`}</div>
+        )}
+        <span className="userFinalInfo">{`Score: ${userPoints}`}</span>
         <button className="showResultsBtn" onClick={() => setButtonPopup(true)}>
           Display results
         </button>
         <Link className="showResultsBtn" to="/">
           New game
         </Link>
-        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-          {sortedMockDataPlayers.map((player, index) => {
-            return <Player key={index} player={player} index={index} />;
-          })}
+        <Popup
+          trigger={buttonPopup}
+          shouldClose={true}
+          setTrigger={setButtonPopup}
+        >
+          {savedPlayers
+            .sort((a, b) => b.score - a.score)
+            .filter((players, index) => index < 10)
+            .map((player, index) => {
+              return <Player key={index} player={player} index={index} />;
+            })}
         </Popup>
+        {userNameInputStatus === true ? (
+          <form
+            trigger={playerHasNoUsername}
+            shouldClose={false}
+            className="userInputPopup"
+          >
+            <input
+              placeholder="Enter name"
+              value={username}
+              onChange={handleUsername}
+              className="userInput"
+            ></input>
+            <button className="buttonSavePlayer" onClick={(e) => savePlayer(e)}>
+              Save
+            </button>
+          </form>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
