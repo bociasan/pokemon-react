@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { typeColor } from "../../data/typeColor";
 import "./card.css";
-import { fetchData } from "../../functions/utils";
 
 export const Card = (props) => {
   const { pokemon } = props;
@@ -15,11 +13,10 @@ export const Card = (props) => {
         <div className="img-shadow-div">
           <div className="img-div">
             <img className="pokemon-image" src={IMG_URL} />
-            {/*<img className="pokemon-image" src={`https://img.pokemondb.net/sprites/home/normal/2x/${pokemon.name}.jpg`}/>*/}
-            {/*<img className="pokemon-image" src={`https://projectpokemon.org/images/normal-sprite/${pokemon.name}.gif`}/>*/}
-            {/*<img className="pokemon-image" src={`https://projectpokemon.org/images/sprites-models/pgo-sprites/pm${pokemon.id}.icon.png`}/>*/}
-            {/* <img className="pokemon-image" src={pokemon.sprites.front_default}/> */}
-
+            {/* <img
+              className="pokemon-image"
+              src={`https://projectpokemon.org/images/sprites-models/pgo-sprites/pm${pokemon.id}.icon.png`}
+            /> */}
             <div className="shadow"></div>
           </div>
         </div>
