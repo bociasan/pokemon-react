@@ -30,12 +30,10 @@ export const fetchTypesData = async () => {
       ) {
         multipliers[key] = 0.5;
       } else if (
-          type.damage_relations.no_damage_to.find((el) => el.name === key)
+        type.damage_relations.no_damage_to.find((el) => el.name === key)
       ) {
         multipliers[key] = 0;
-      }
-
-      else {
+      } else {
         multipliers[key] = 1;
       }
     });
@@ -94,7 +92,7 @@ export const comparePokemons = (
   };
 };
 
-const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
+export const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
   let totalPoints = 0;
   // console.log(typesArray)
   firstPokemon.types.forEach((element1) => {
@@ -108,68 +106,16 @@ const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
   return totalPoints / firstPokemon.types.length;
 };
 
-// const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
-//     let totalPoints = 0
-//     firstPokemon.types.forEach((element1) => {
-//         // const typeName = element1.type.name
-//         let partialPoints = 1
-//         const damageRelations = typesArray[element1.type.name].damage_relations
-//         // console.log(damageRelations)
-//         secondPokemon.types.forEach((element2, index2) => {
-//             //console.log(firstPokemon.types)
-//             if (damageRelations.double_damage_to.find(el => el.name === element2.type.name))
-//             {
-//                 // console.log(`${element1.type.name} x2 to ${element2.type.name}`)
-//                 partialPoints *= 2
-//             }
-//             else if (damageRelations.half_damage_to.find(el => el.name === element2.type.name))
-//             {
-//                 // console.log(`${element1.type.name} x1/2 to ${element2.type.name}`)
-//                 partialPoints *= 0.5
-//             }
-//             // if (damageRelations.no_damage_to.find(el => el.name === element2.type.name))
-//             else
-//             {
-//                 partialPoints *= 1
-//                 // console.log(`${element1.type.name} no damage to ${element2.type.name}`)
-//             }
-//
-//         })
-//         totalPoints += partialPoints
-//     })
-//
-//     return totalPoints / firstPokemon.types.length
-// }
-
-// const calcPoints = (firstPokemon, secondPokemon, typesArray) => {
-//     let totalPoints = 0
-//     firstPokemon.types.forEach((element1) => {
-//         // const typeName = element1.type.name
-//         let partialPoints = 1
-//         const damageRelations = typesArray[element1.type.name].damage_relations
-//         // console.log(damageRelations)
-//         secondPokemon.types.forEach((element2, index2) => {
-//             //console.log(firstPokemon.types)
-//             if (damageRelations.double_damage_to.find(el => el.name === element2.type.name))
-//             {
-//                 // console.log(`${element1.type.name} x2 to ${element2.type.name}`)
-//                 partialPoints *= 2
-//             }
-//             else if (damageRelations.half_damage_to.find(el => el.name === element2.type.name))
-//             {
-//                 // console.log(`${element1.type.name} x1/2 to ${element2.type.name}`)
-//                 partialPoints *= 0.5
-//             }
-//             // if (damageRelations.no_damage_to.find(el => el.name === element2.type.name))
-//             else
-//             {
-//                 partialPoints *= 1
-//                 // console.log(`${element1.type.name} no damage to ${element2.type.name}`)
-//             }
-//
-//         })
-//         totalPoints += partialPoints
-//     })
-//
-//     return totalPoints / firstPokemon.types.length
-// }
+export const calcPoints2 = (array1, array2, typesArray) => {
+  let totalPoints = 0;
+  // console.log(typesArray)
+  array1.forEach((element1) => {
+    let partialPoints = 1;
+    array2.forEach((element2) => {
+      partialPoints *= typesArray[element1][element2];
+      // console.log(element1.type.name)
+    });
+    totalPoints += partialPoints;
+  });
+  return totalPoints / array1.length;
+};
