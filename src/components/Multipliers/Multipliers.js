@@ -73,7 +73,7 @@ export const Multipliers = (props) => {
     }
 
 
-    let firstRow = Object.keys(types).map(el2 => <td onClick={() => firstRowOnClick(el2)}  key={el2+el2}
+    let firstRow = Object.keys(types).map(el2 => <td onClick={() => firstRowOnClick(el2)}
         className={defenceTypes[el2]? "multipliers-table-cell first-row bold selected-defence":"multipliers-table-cell first-row bold"}>{el2}</td>)
     firstRow.unshift(<td className="multipliers-table-cell" onClick={() => pokeballOnClick()} style={{borderWidth: 0}}>
         <img className="pokeball-img" src={require("../../img/pokeball.png")}/></td>)
@@ -81,7 +81,7 @@ export const Multipliers = (props) => {
 
     // console.log(types_keys)
     let result = first_row_keys.map(el1 =>
-        <tr className="multipliers-table-row">
+        <tr key={el1} className="multipliers-table-row">
             {
                 el1 === "first"
                     ? firstRow
