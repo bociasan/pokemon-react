@@ -68,11 +68,7 @@ export const BattleStatisticsComponent = ({ userPoints }) => {
             })}
         </Popup>
         {userNameInputStatus === true ? (
-          <form
-            trigger={playerHasNoUsername}
-            shouldClose={false}
-            className="userInputPopup"
-          >
+          <form className="userInputPopup">
             <input
               placeholder="Enter name"
               value={username}

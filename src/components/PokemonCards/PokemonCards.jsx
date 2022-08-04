@@ -5,11 +5,14 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backgroundImage from "../../img/background.webp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
-import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
-function PokemonCards({ userPoints, setUserPoints }) {
+import { Navigate } from "react-router-dom";
+function PokemonCards({ handleChangeUserPoints }) {
   const [gameHearts, setGameHearts] = useState(new Array(3));
   const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
-
+  const handleChangeGameHearts = () =>
+    setGameHearts(new Array(gameHearts.length - 1));
+  const handleChangeBattleGroundStatus = () =>
+    setBattleGroundCardStatus(!battleGroundCardsStatus);
   if (gameHearts.length > 0)
     return (
       <div className="battleground page">
@@ -26,16 +29,12 @@ function PokemonCards({ userPoints, setUserPoints }) {
 
         <RoundIntroduction
           delay={1000}
-          setBattleGroundCardStatus={setBattleGroundCardStatus}
-          battleGroundCardsStatus={battleGroundCardsStatus}
-          gameHearts={gameHearts}
-          setGameHearts={setGameHearts}
-          userPoints={userPoints}
-          setUserPoints={setUserPoints}
+          handleChangeUserPoints={handleChangeUserPoints}
+          handleChangeGameHearts={handleChangeGameHearts}
+          handleChangeBattleGroundStatus={handleChangeBattleGroundStatus}
         />
       </div>
     );
-  else if (gameHearts.length === 0)
-    return <BattleStatisticsComponent userPoints={userPoints} />;
+  else if (gameHearts.length === 0) return <Navigate to="/statistics" />;
 }
 export default PokemonCards;

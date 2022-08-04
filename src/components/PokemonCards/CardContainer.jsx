@@ -12,14 +12,11 @@ import {
 import VSLogo from "../../img/vs.png";
 import { Multipliers } from "../Multipliers/Multipliers";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
+
 const CardsContainer = ({
   handleChangeRoundClick,
-  battleRound,
-  setBattleRound,
-  gameHearts,
-  setGameHearts,
-  userPoints,
-  setUserPoints,
+  handleChangeUserPoints,
+  handleChangeGameHearts,
 }) => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [allTypes, setAllTypes] = useState({});
@@ -57,10 +54,9 @@ const CardsContainer = ({
     );
     setStyle({ visibility: "visible" });
     setButtonsStyle({ visibility: "hidden" });
-    if (prediction === false) {
-      setGameHearts(new Array(gameHearts.length - 1));
-    } else if (prediction === true) {
-      setUserPoints(userPoints + 1);
+    if (prediction === false) handleChangeGameHearts();
+    else if (prediction === true) {
+      handleChangeUserPoints();
     }
     setTimeout(() => handleChangeRoundClick(), 1000);
   };
@@ -86,10 +82,6 @@ const CardsContainer = ({
           style={{ color: "yellow" }}
         />
       </div>
-
-      {/* <div className="topscreen-message">
-        Choose prediction for the left card
-      </div> */}
 
       <div
         onContextMenu={(e) => e.preventDefault()}
