@@ -1,6 +1,6 @@
 import "./card.css";
 import "../../styles/fonts.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backgroundImage from "../../img/background.webp";
 import FavoriteIcon from "@material-ui/icons/Favorite";

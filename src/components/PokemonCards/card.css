@@ -271,7 +271,7 @@
 }
 .button-interaction {
   position: absolute;
-  width: 110px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

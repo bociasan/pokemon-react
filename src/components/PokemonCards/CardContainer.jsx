@@ -1,16 +1,14 @@
 import React from "react";
 import { Card } from "./Card";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  fetchPokemonData,
   fetchPokemonsData,
   fetchData,
   comparePokemons,
   fetchTypesData,
 } from "../../functions/utils";
 import VSLogo from "../../img/vs.png";
-import { Multipliers } from "../Multipliers/Multipliers";
+
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 const CardsContainer = ({
@@ -97,7 +95,6 @@ const CardsContainer = ({
         {Object.keys(pokemon2).length > 0 && (
           <Card pokemon={pokemon2} key={pokemon2.id} style={style} />
         )}
-        {/* {Object.keys(allTypes).length > 0 && <Multipliers types={allTypes} />} */}
       </div>
     </div>
   );
