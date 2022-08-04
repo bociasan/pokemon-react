@@ -21,6 +21,9 @@
 
 .table-div{
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .table-title{
     font-size: 2em;
