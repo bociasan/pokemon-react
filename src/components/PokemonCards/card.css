@@ -258,6 +258,22 @@
   transform: scale(1.5);
   opacity: 1;
 }
+
+.boosted{
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  z-index: 2;
+  height: 70px;
+  /*width: 150px;*/
+  /*size: 20px 20px;*/
+  background-color: transparent !important;
+}
+
+.boosted::after {
+  background-image: none !important;
+}
+
 .battleground .versus {
   position: absolute;
   display: flex;
@@ -282,6 +298,12 @@
   .battleground.versus {
     height: 15vw;
   }
+
+  .boosted{
+    bottom: 0px;
+    left: 20px;
+  }
+
   .cards-container {
     display: flex;
     align-items: center;

@@ -1,14 +1,19 @@
 import { typeColor } from "../../data/typeColor";
 import "./card.css";
+import powerUpLogo from "../../img/powerUpLogo.png";
+import React from "react";
 
 export const Card = (props) => {
-  const { pokemon } = props;
+  const { pokemon, showName, boosted = false } = props;
   const { id } = pokemon;
   const POKEMON_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const IMG_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`;
 
   return (
     <div className="card">
+      {boosted && <div className="boosted">
+        <img style={{width:"100%", height:"100%"}} src={powerUpLogo} />
+      </div>}
       <div className="card-container">
         <div className="img-shadow-div">
           <div className="img-div">
@@ -20,9 +25,10 @@ export const Card = (props) => {
             <div className="shadow"></div>
           </div>
         </div>
+
         <div className="id-div">{id}</div>
         <div className="details-container">
-          <div className="name">{pokemon.name}</div>
+          {showName && <div className="name">{pokemon.name}</div>}
           <div className="types-container">
             {pokemon.types &&
               pokemon.types.length > 0 &&

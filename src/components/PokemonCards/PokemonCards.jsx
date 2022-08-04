@@ -5,14 +5,11 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backgroundImage from "../../img/background.webp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
-import { Navigate } from "react-router-dom";
-function PokemonCards({ handleChangeUserPoints }) {
+import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
+function PokemonCards({ userPoints, setUserPoints }) {
   const [gameHearts, setGameHearts] = useState(new Array(3));
-  const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
-  const handleChangeGameHearts = () =>
-    setGameHearts(new Array(gameHearts.length - 1));
-  const handleChangeBattleGroundStatus = () =>
-    setBattleGroundCardStatus(!battleGroundCardsStatus);
+  // const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
+
   if (gameHearts.length > 0)
     return (
       <div className="battleground page">
@@ -29,9 +26,12 @@ function PokemonCards({ handleChangeUserPoints }) {
 
         <RoundIntroduction
           delay={1000}
-          handleChangeUserPoints={handleChangeUserPoints}
-          handleChangeGameHearts={handleChangeGameHearts}
-          handleChangeBattleGroundStatus={handleChangeBattleGroundStatus}
+          // setBattleGroundCardStatus={setBattleGroundCardStatus}
+          // battleGroundCardsStatus={battleGroundCardsStatus}
+          gameHearts={gameHearts}
+          setGameHearts={setGameHearts}
+          userPoints={userPoints}
+          setUserPoints={setUserPoints}
         />
       </div>
     );

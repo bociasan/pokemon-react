@@ -10,7 +10,14 @@ import { useState } from "react";
 
 function App() {
   const [userPoints, setUserPoints] = useState(0);
-  const handleChangeUserPoints = () => setUserPoints(userPoints + 1);
+  // const [x, setX] = useState("0");
+  // const [y, setY] = useState("0");
+  // const pokeballMove = (e) => {
+  //   setX(`${e.clientX + 25}px`);
+  //   setY(`${e.clientY + 25}px`);
+  // };
+
+  // console.log(userPoints);
   return (
     <div className="App">
       <Router>
@@ -24,7 +31,10 @@ function App() {
           <Route
             path="/battleground"
             element={
-              <PokemonCards handleChangeUserPoints={handleChangeUserPoints} />
+              <PokemonCards
+                userPoints={userPoints}
+                setUserPoints={setUserPoints}
+              />
             }
           />
           <Route
@@ -33,6 +43,12 @@ function App() {
           />
         </Routes>
       </Router>
+      {/* <div className="pokeball" style={{ left: x, top: y }}>
+        <img
+          style={{ width: 40, height: 40 }}
+          src={require("./img/pokeball.png")}
+        />
+      </div> */}
     </div>
   );
 }
