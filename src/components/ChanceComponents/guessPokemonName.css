@@ -13,8 +13,8 @@
 
 .guess-pokemon-name-box{
     padding: 20px;
-    height: 50%;
-    width: 45%;
+    height: 60%;
+    width: 50%;
     border: 1px solid grey;
     border-radius: 20px;
     display: flex;

@@ -20,6 +20,7 @@ const RoundIntroduction = ({
     // setBattleGroundCardStatus(!battleGroundCardsStatus);
     setBattleRound(battleRound + 1);
     setVisible(true);
+
   };
   // console.log(battleRound);
   useEffect(() => {

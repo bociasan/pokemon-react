@@ -27,6 +27,7 @@ const CardsContainer = ({
   userPoints,
   setUserPoints,
 }) => {
+  const MAX_HEART_NUMBER = 6
   const [showName, setShowName] = useState(chance==0 ? false : true)
   const [boosted, setBoosted] = useState(false)
   const [allPokemons, setAllPokemons] = useState([]);
@@ -35,9 +36,8 @@ const CardsContainer = ({
   const [pokemon2, setPokemon2] = useState({});
   const [style, setStyle] = useState({ visibility: "hidden" });
   const [buttonsStyle, setButtonsStyle] = useState({ visibility: "visible" });
-  let typesflag = false;
   useEffect(() => {
-    fetchTypesData().then((types) => {setAllTypes(types); typesflag = true});
+    fetchTypesData().then((types) => setAllTypes(types));
     fetchPokemonsData().then((res) => {
       setAllPokemons(res.results);
     });
@@ -53,26 +53,30 @@ const CardsContainer = ({
         switch (reward){
           case "boost":
             setBoosted(true)
+              // console.log("boost")
             break;
           case "heart":
             setBoosted(false)
-            setGameHearts(gameHearts+1)
+            setGameHearts(new Array(gameHearts.length + 1 > MAX_HEART_NUMBER ? MAX_HEART_NUMBER:gameHearts.length + 1))
+              console.log("hearts +1")
             break;
 
           case "double-score":
             setBoosted(false)
             setUserPoints(userPoints*2)
+              console.log("points*2", userPoints)
             break;
 
           case "double-heart":
             setBoosted(false)
-            setGameHearts(gameHearts*2)
+            setGameHearts(new Array(gameHearts.length *2 > MAX_HEART_NUMBER ? MAX_HEART_NUMBER:gameHearts.length *2 ))
+              console.log("hearts*2")
             break;
 
         }
-        console.log("boooosted")
+        // console.log("boooosted")
       } else {
-        console.log("Wrong name")
+        // console.log("Wrong name")
         if (buttonPressed) {
           setBoosted(false)
           setShowName(true)
@@ -92,6 +96,7 @@ const CardsContainer = ({
   useEffect(() => {
     if (allPokemons.length > 0) {
       setRandomPokemons();
+      setBoosted(false)
     }
   }, [allPokemons]);
 
@@ -110,7 +115,7 @@ const CardsContainer = ({
     } else if (prediction === true) {
       setUserPoints(userPoints + 1);
     }
-    setBoosted(false)
+
 
     setTimeout(() => handleChangeRoundClick(), 1000);
   };
@@ -147,8 +152,9 @@ const CardsContainer = ({
         onContextMenu={(e) => e.preventDefault()}
         className="cards-container"
       >
-        {/*{Object.keys(pokemon1).length > 0 && Object.keys(pokemon2).length > 0 && Object.keys(types) && typesflag &&*/}
-        {/*<div> {whoWillWin(pokemon1, pokemon2, types, boosted)} </div>}*/}
+        {Object.keys(pokemon1).length > 0 && Object.keys(pokemon2).length > 0 && Object.keys(types) && Object.keys(allTypes).length>0 &&
+        console.log(whoWillWin(pokemon1, pokemon2, allTypes, boosted))}
+
         {Object.keys(pokemon1).length > 0 && (
           <Card boosted={boosted} showName={showName} pokemon={pokemon1} key={pokemon1.id} style={style} />
         )}

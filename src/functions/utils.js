@@ -62,38 +62,48 @@ export const comparePokemons = (
   firstPokemon,
   secondPokemon,
   typesArray,
-  userDecision = "draw",
+  userDecision,
   boosted = false
 ) => {
   //   console.log(typesArray);
   let firstPokemonPoints = calcPoints(firstPokemon, secondPokemon, typesArray);
   if (boosted) firstPokemonPoints *= 1.5
   let secondPokemonPoints = calcPoints(
-    secondPokemon,
-    secondPokemon,
+      secondPokemon,
+      firstPokemon,
     typesArray
   );
-  let result =
-    firstPokemonPoints > secondPokemonPoints
-      ? "leftWin"
-      : firstPokemonPoints === secondPokemonPoints
-      ? "draw"
-      : firstPokemonPoints < secondPokemonPoints
-      ? "leftLoose"
-      : "";
-  let prediction = userDecision === result ? true : false;
+  let result = ""
+  if (firstPokemonPoints > secondPokemonPoints) {
+    result = "leftWin"
+  } else
+    if (firstPokemonPoints < secondPokemonPoints) {
+      result = "leftLoose"
+    } else result = "draw"
+
+  let prediction = true;
+  if (userDecision == result) {
+    prediction = true
+  } else {
+    prediction = false
+  }
+  // console.log(prediction, result)
+
   // console.log(first.types)
   // console.log(second.types)
 
   // console.log(
   //   `Points1 = ${firstPokemonPoints}, Points2 = ${secondPokemonPoints}, result = ${result}, prediction = ${prediction}`
   // );
-  return {
+  let response = {
     firstPokemonPoints: firstPokemonPoints,
     secondPokemonPoints: secondPokemonPoints,
     result: result,
     prediction: prediction,
-  };
+    userDecision: userDecision
+  }
+  // console.log(response)
+  return response;
 };
 
 export const getTypesFromPokemon = ({types}) => {
@@ -109,7 +119,7 @@ export const whoWillWin = (
     typesArray,
     boosted = false
 ) => {
-  //   console.log(typesArray);
+    // console.log(typesArray);
   // console.log(firstPokemon)
   let firstPokemonPoints =
       calcPoints2(getTypesFromPokemon(firstPokemon), getTypesFromPokemon(secondPokemon), typesArray);
@@ -119,15 +129,17 @@ export const whoWillWin = (
   let result =
       firstPokemonPoints > secondPokemonPoints
           ? "leftWin"
-          : firstPokemonPoints === secondPokemonPoints
+          : firstPokemonPoints == secondPokemonPoints
               ? "draw"
               : firstPokemonPoints < secondPokemonPoints
                   ? "leftLoose"
                   : "";
   return {
     firstPokemonPoints: firstPokemonPoints,
+    firstPokemonName: firstPokemon.name,
+    secondPokemonName: secondPokemon.name,
     secondPokemonPoints: secondPokemonPoints,
-    result: "da",
+    result: result,
   };
 };
 

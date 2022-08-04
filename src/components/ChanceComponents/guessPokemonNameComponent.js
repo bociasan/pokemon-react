@@ -1,7 +1,7 @@
 import "./guessPokemonName.css"
 import {useEffect, useState} from "react";
 export const GuessPokemonNameComponent = ({yourPokemon, tryName, reward}) => {
-    const IMG_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${yourPokemon.id}.svg`;
+    // const IMG_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${yourPokemon.id}.svg`;
 
     const [inputValue, setInputValue] = useState("")
 
@@ -17,7 +17,7 @@ export const GuessPokemonNameComponent = ({yourPokemon, tryName, reward}) => {
                 {reward.message}
             </div>
             <div className="guess-pokemon-name-img-div">
-                <img className="guess-pokemon-name-img" src={IMG_URL} />
+                {Object.keys(yourPokemon).length>0 &&<img className="guess-pokemon-name-img" src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${yourPokemon.id}.svg`} />}
             </div>
             <div className="guess-pokemon-name-input-button-container">
                 <input onChange={(e) => setInputValue(e.target.value)} className="guess-pokemon-name-imput userInput"/>
