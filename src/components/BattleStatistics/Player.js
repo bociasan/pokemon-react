@@ -3,11 +3,11 @@ export const Player = ({ player, index }) => {
     <div className="player">
       <span className="playerOverallRank">{index + 1}</span>
       <p className="playerName">
-        <i class="fa-solid fa-scroll"></i>
+        <i className="fa-solid fa-scroll"></i>
         {player.name}
       </p>
       <p className="playerScore">
-        {player.score} <i class="fa-solid fa-dragon"></i>
+        {player.score} <i className="fa-solid fa-dragon"></i>
       </p>
     </div>
   );
