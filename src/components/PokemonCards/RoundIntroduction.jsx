@@ -5,9 +5,9 @@ import { CSSTransition } from "react-transition-group";
 
 const RoundIntroduction = ({
   delay,
-  pokemons,
-  battleGroundCardsStatus,
-  setBattleGroundCardStatus,
+  // pokemons,
+  // battleGroundCardsStatus,
+  // setBattleGroundCardStatus,
   gameHearts,
   setGameHearts,
   userPoints,
@@ -15,13 +15,13 @@ const RoundIntroduction = ({
 }) => {
   const [battleRound, setBattleRound] = useState(1);
   const [visible, setVisible] = useState(true);
-  console.log(visible);
+  // console.log(visible);
   const handleChangeRoundClick = () => {
-    setBattleGroundCardStatus(!battleGroundCardsStatus);
+    // setBattleGroundCardStatus(!battleGroundCardsStatus);
     setBattleRound(battleRound + 1);
     setVisible(true);
   };
-  console.log(battleRound);
+  // console.log(battleRound);
   useEffect(() => {
     const timer = setTimeout(() => setVisible(false), delay);
     return () => clearTimeout(timer);
@@ -32,7 +32,8 @@ const RoundIntroduction = ({
     </CSSTransition>
   ) : (
     <CardsContainer
-      pokemons={pokemons}
+        chance={Math.trunc(Math.random()*2)}
+      // pokemons={pokemons}
       handleChangeRoundClick={handleChangeRoundClick}
       battleRound={battleRound}
       setBattleRound={setBattleRound}

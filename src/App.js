@@ -16,7 +16,8 @@ function App() {
   //   setX(`${e.clientX + 25}px`);
   //   setY(`${e.clientY + 25}px`);
   // };
-  console.log(userPoints);
+
+  // console.log(userPoints);
   return (
     <div className="App">
       <Router>

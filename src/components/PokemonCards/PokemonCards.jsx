@@ -8,7 +8,7 @@ import RoundIntroduction from "./RoundIntroduction";
 import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
 function PokemonCards({ userPoints, setUserPoints }) {
   const [gameHearts, setGameHearts] = useState(new Array(3));
-  const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
+  // const [battleGroundCardsStatus, setBattleGroundCardStatus] = useState(false);
 
   if (gameHearts.length > 0)
     return (
@@ -26,8 +26,8 @@ function PokemonCards({ userPoints, setUserPoints }) {
 
         <RoundIntroduction
           delay={1000}
-          setBattleGroundCardStatus={setBattleGroundCardStatus}
-          battleGroundCardsStatus={battleGroundCardsStatus}
+          // setBattleGroundCardStatus={setBattleGroundCardStatus}
+          // battleGroundCardsStatus={battleGroundCardsStatus}
           gameHearts={gameHearts}
           setGameHearts={setGameHearts}
           userPoints={userPoints}
