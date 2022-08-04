@@ -5,6 +5,7 @@ import BackgroundImage from "../BackgroundComponent/backgroundComponent";
 import backgroundImage from "../../img/background.webp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import RoundIntroduction from "./RoundIntroduction";
+import {Navigate} from "react-router-dom";
 import { BattleStatisticsComponent } from "../BattleStatistics/BattleStatisticsPage";
 function PokemonCards({ userPoints, setUserPoints }) {
   const [gameHearts, setGameHearts] = useState(new Array(3));
