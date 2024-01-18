@@ -16,19 +16,19 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/"
+            path="/pokemon-react/"
             element={<IntroPage />}
             setUserPoints={setUserPoints}
           />
-          <Route path="/rules" element={<RulesPage />} />
+          <Route path="/pokemon-react/rules" element={<RulesPage />} />
           <Route
-            path="/battleground"
+            path="/pokemon-react/battleground"
             element={
               <PokemonCards handleChangeUserPoints={handleChangeUserPoints} />
             }
           />
           <Route
-            path="/statistics"
+            path="/pokemon-react/statistics"
             element={<BattleStatisticsComponent userPoints={userPoints} />}
           />
         </Routes>
