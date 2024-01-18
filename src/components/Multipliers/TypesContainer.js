@@ -13,7 +13,7 @@ export const TypesContainer = (props) => {
     <div className="multipliers-types-container">
       {types.map((iterator, index) => (
         <div
-          className="multipliers-type"
+          className={"multipliers-type"}
           key={index}
           style={{
             "--custom-type-color": typeColor.find(

@@ -1,13 +1,14 @@
 .multipliers-types-container {
-  margin: 10px;
+  margin: 10px 0;
   width: 100%;
   /*max-width: 45%;*/
-  height: 100%;
+  height: inherit;
   /*min-height: 50px;*/
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-start;
+  flex-grow: 1;
+  align-content: center;
   justify-content: center;
   padding: 5px;
   border: 1px solid black;
@@ -37,6 +38,7 @@
   font-family: Winner;
   text-shadow: #ffffff88 1px 1px 1px;
   /*text-transform: uppercase;*/
+  align-self: center;
 }
 
 .multipliers-type:hover {
@@ -47,4 +49,13 @@
   padding: 0 15px;
   margin: 0 5px;
   color: #000000;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .multipliers-types-container{
+    flex-direction: row;
+    height: auto;
+  }
+
 }

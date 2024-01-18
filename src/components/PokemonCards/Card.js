@@ -5,7 +5,8 @@ export const Card = (props) => {
   const { pokemon } = props;
   const { id } = pokemon;
   const POKEMON_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const IMG_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`;
+  // const IMG_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`;
+  const IMG_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (
     <div className="card">

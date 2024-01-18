@@ -1,12 +1,15 @@
-.root {
+:root {
   --default-size: 25px;
+  --fch-size: 25px;
+  --fcw-size: 70px;
 }
 
 .multipliers-page-div {
   font-family: Winner;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  user-select: none;
   /*flex-wrap: wrap;*/
   /*width: 1000px;*/
   /*background-color: #ffcfcf;*/
@@ -45,13 +48,17 @@
 .first-row {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  height: 30px;
+  height: var(--fcw-size);
   width: 20px;
 }
 
 .first-column {
-  width: 30px;
-  height: var(--default-size);
+  width: var(--fcw-size);
+  height: var(--fch-size);
+}
+
+.first-row:hover, .first-column:hover{
+  background-color: rgb(231, 181, 189);
 }
 
 .bold {
@@ -71,16 +78,16 @@
 }
 
 .compare-container {
-  margin: 10px;
+  margin: 10px 0;
   /*position: relative;*/
   width: 20%;
-  height: 50vh;
+  height: inherit;
   /*background-color: black;*/
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 @media only screen and (max-width: 1200px) {
   .multipliers-table-cell {
@@ -90,12 +97,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90vh;
+    /* height: 90vh; */
+    height:inherit;
   }
   .compare-container {
-    width: 60vw;
-    height: 10vh;
+    width: inherit;
+    height: inherit;
     display: flex;
     flex-direction: column;
+
   }
 }
