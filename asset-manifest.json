@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20eca7a3.css",
+    "main.js": "/static/js/main.501e7199.js",
+    "static/js/787.0accbaf3.chunk.js": "/static/js/787.0accbaf3.chunk.js",
+    "static/media/background.webp": "/static/media/background.5e3ed6cf374982d1b5e8.webp",
+    "static/media/vs.png": "/static/media/vs.c20c3b354ee133546910.png",
+    "static/media/pokemon_logo.png": "/static/media/pokemon_logo.5511e54e001107cf3e5a.png",
+    "static/media/pokemon_end.png": "/static/media/pokemon_end.8db890c3bcfc84f54528.png",
+    "static/media/pokeball.png": "/static/media/pokeball.2c2db1733e6ca752aa5f.png",
+    "static/media/rules_logo.png": "/static/media/rules_logo.5cacf8352221a314e6a6.png",
+    "static/media/Cartoon_Regular.ttf": "/static/media/Cartoon_Regular.86f660ddf90bfa1ee2c8.ttf",
+    "static/media/frontage_Condensed.otf": "/static/media/frontage_Condensed.ed4362c22804ec0cb0b1.otf",
+    "static/media/winner-condregular.otf": "/static/media/winner-condregular.3bbf9530f7e537b12767.otf",
+    "static/media/fight_logo.png": "/static/media/fight_logo.b44782e1bad780a7bdaa.png",
+    "index.html": "/index.html",
+    "main.20eca7a3.css.map": "/static/css/main.20eca7a3.css.map",
+    "main.501e7199.js.map": "/static/js/main.501e7199.js.map",
+    "787.0accbaf3.chunk.js.map": "/static/js/787.0accbaf3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20eca7a3.css",
+    "static/js/main.501e7199.js"
+  ]
+}
