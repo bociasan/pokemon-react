@@ -1,5 +1,6 @@
 {
   "name": "pokemon-react",
+  "homepage": "https://bociasan.github.io/pokemon-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
