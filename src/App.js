@@ -31,6 +31,11 @@ function App() {
             path="/pokemon-react/statistics"
             element={<BattleStatisticsComponent userPoints={userPoints} />}
           />
+          <Route
+            path="/statistics"
+            element={<BattleStatisticsComponent userPoints={userPoints} />}
+          />
+
         </Routes>
       </Router>
     </div>
