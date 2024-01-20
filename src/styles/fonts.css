@@ -1,5 +1,9 @@
-@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+/*@import url('http://fonts.cdnfonts.com/css/pokemon-solid');*/
+/*@import url('https://fonts.cdnfonts.com/s/17890/Pokemon Solid.woff');*/
 /*@font-face { font-family: Electrox; src: url('electrox.ttf'); }*/
+
+@font-face{font-family:pokemon solid;font-style:normal;font-weight:400;src:local('Pokemon Solid'),url('https://fonts.cdnfonts.com/s/17890/Pokemon Solid.woff') format('woff')}
+
 @font-face { font-family: Cartoon; src: url('Cartoon_Regular.ttf'); }
 @font-face { font-family: Frontage; src: url('frontage_Condensed.otf'); }
 @font-face { font-family: Winner; src: url('winner-condregular.otf'); }
