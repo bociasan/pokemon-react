@@ -16,7 +16,7 @@ const IntroPage = ({ setUserPoints }) => {
 
         <img className="logo" src={pokemonLogo} />
         <Link
-          to="/pokemon-react/battleground"
+          to="/battleground"
           className="button"
           onClick={() => setUserPoints(0)}
         >
@@ -27,7 +27,7 @@ const IntroPage = ({ setUserPoints }) => {
 
       </div>
         <Link
-            to="/pokemon-react/rules"
+            to="/rules"
             className="rules-button"
             onClick={() => setUserPoints(0)}
         >

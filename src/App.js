@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import "./App.css";
 import IntroPage from "./components/IntroPage/introPage";
@@ -13,10 +13,10 @@ function App() {
   const handleChangeUserPoints = () => setUserPoints(userPoints + 1);
   return (
     <div className="App">
-      <Router basename={"/pokemon-react"}>
+      <HashRouter basename='/'>
         <Routes>
           <Route
-            path="/"
+            exact path="/"
             element={<IntroPage />}
             setUserPoints={setUserPoints}
           />
@@ -32,7 +32,7 @@ function App() {
             element={<BattleStatisticsComponent userPoints={userPoints} />}
           />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
