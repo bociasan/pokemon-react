@@ -13,29 +13,24 @@ function App() {
   const handleChangeUserPoints = () => setUserPoints(userPoints + 1);
   return (
     <div className="App">
-      <Router>
+      <Router basename={"/pokemon-react"}>
         <Routes>
           <Route
-            path="/pokemon-react/"
+            path="/"
             element={<IntroPage />}
             setUserPoints={setUserPoints}
           />
-          <Route path="/pokemon-react/rules" element={<RulesPage />} />
+          <Route path="/rules" element={<RulesPage />} />
           <Route
-            path="/pokemon-react/battleground"
+            path="/battleground"
             element={
               <PokemonCards handleChangeUserPoints={handleChangeUserPoints} />
             }
           />
           <Route
-            path="/pokemon-react/statistics"
-            element={<BattleStatisticsComponent userPoints={userPoints} />}
-          />
-          <Route
             path="/statistics"
             element={<BattleStatisticsComponent userPoints={userPoints} />}
           />
-
         </Routes>
       </Router>
     </div>

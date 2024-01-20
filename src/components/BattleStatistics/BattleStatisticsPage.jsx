@@ -52,7 +52,7 @@ export const BattleStatisticsComponent = ({ userPoints }) => {
         <button className="showResultsBtn" onClick={() => setButtonPopup(true)}>
           Display results
         </button>
-        <Link className="showResultsBtn" to="/pokemon-react/">
+        <Link className="showResultsBtn" to="/">
           New game
         </Link>
         <Popup
