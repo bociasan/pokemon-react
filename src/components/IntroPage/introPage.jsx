@@ -12,7 +12,7 @@ const IntroPage = ({ setUserPoints }) => {
     <div className="introPage">
       <BackgroundImage image={backGroundImage} />
 
-      <div className="introPage container">
+      <div className="introPage vh100">
 
         <img className="logo" src={pokemonLogo} />
         <Link

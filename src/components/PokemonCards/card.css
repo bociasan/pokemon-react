@@ -206,7 +206,7 @@
 
 .roundAnnouncer {
   width: 700px;
-  height: 100px;
+  /*height: 100vh;*/
   background: transparent;
   border: none;
   font-size: 5em;
@@ -217,11 +217,13 @@
   letter-spacing: 5px;
   /*text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;*/
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
-}
-.roundAnnouncer {
+
   -webkit-animation: ease-in-out 2s linear forwards;
   animation: ease-in-out 2s linear forwards;
 }
+/*.roundAnnouncer {*/
+
+/*}*/
 .roundAnnouncer.next {
   font-size: 3em;
 }

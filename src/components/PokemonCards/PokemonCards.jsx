@@ -15,7 +15,7 @@ function PokemonCards({ handleChangeUserPoints }) {
     setBattleGroundCardStatus(!battleGroundCardsStatus);
   if (gameHearts.length > 0)
     return (
-      <div className="battleground page">
+      <div className="battleground page vh100">
         <BackgroundImage image={backgroundImage} />
         <div className="gameHeartRemaining">
           {[...gameHearts].map((value, index) => (

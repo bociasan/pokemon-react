@@ -10,7 +10,7 @@
 }
 
 .rules-page-container {
-  margin-top: 4%;
+  margin: 4% 0;
   background-color: #ffcfcfee;
   width: 90vw;
   /*height: 700px;*/
@@ -23,7 +23,7 @@
 .new-game-button {
   position: absolute;
   background-color: black;
-  bottom: 10px;
+  top: 10px;
   right: 60px;
   color: white;
   border-radius: 20px;

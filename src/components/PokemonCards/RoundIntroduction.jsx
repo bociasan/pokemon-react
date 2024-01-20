@@ -22,7 +22,7 @@ const RoundIntroduction = ({
     return () => clearTimeout(timer);
   }, [battleRound]);
   return visible ? (
-    <CSSTransition in={true} appear={true} classNames="example" timeout={1000}>
+    <CSSTransition in={true} appear={true} classNames="example" timeout={delay}>
       <div className="roundAnnouncer">{`Round ${battleRound}`}</div>
     </CSSTransition>
   ) : (
